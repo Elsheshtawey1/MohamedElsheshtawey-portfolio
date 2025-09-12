@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Code2 } from "lucide-react";
 import { ShinyText } from "@/components/animations/ShinyText";
@@ -23,16 +23,18 @@ const Navigation = ({ data }: NavigationProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const navItems = [
+const navItems = useMemo(
+  () => [
     { id: "home", label: data.navigation.home },
     { id: "about", label: data.navigation.about },
     { id: "skills", label: data.navigation.skills },
     { id: "projects", label: data.navigation.projects },
     { id: "contact", label: data.navigation.contact },
-  ];
-
+  ],
+  [data.navigation]
+);
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll =  () => {
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
@@ -61,24 +63,16 @@ const Navigation = ({ data }: NavigationProps) => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-      isScrolled 
-        ? "bg-background/80 backdrop-blur-md border-b border-primary/20 shadow-card" 
-        : "bg-transparent"
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${isScrolled ? "bg-background/80 backdrop-blur-md border-b border-primary/20 shadow-card" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 text-center text-xl">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
-            className="flex items-center gap-2 text-primary hover:text-accent transition-smooth group"
-          >
+          
+          <button onClick={() => scrollToSection("home")} className="flex items-center gap-2 text-primary hover:text-accent transition-smooth group">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-smooth">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <ShinyText shimmerDuration={2} shimmerWidth={120} wordByWord={true} staggerDelay={0.5}>
-              {data.personal.name}
-            </ShinyText>
+            <h1>Mohamed</h1>
           </button>
 
           {/* Desktop Navigation */}
@@ -87,36 +81,23 @@ const Navigation = ({ data }: NavigationProps) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-smooth hover:text-primary ${
-                  activeSection === item.id 
-                    ? "text-primary" 
-                    : "text-secondary"
-                }`}
+                className={`relative px-3 py-2 text-sm font-medium transition-smooth hover:text-primary ${activeSection === item.id ? "text-primary" : "text-secondary"}`}
               >
                 {item.label}
-                {activeSection === item.id && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full" />
-                )}
+                {activeSection === item.id && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full" />}
               </button>
             ))}
           </div>
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <Button 
-              size="sm"
-              className="bg-gradient-primary hover:shadow-glow transition-smooth"
-              onClick={() => scrollToSection("contact")}
-            >
+            <Button size="sm" aria-label="Hire Me" className="bg-gradient-primary hover:shadow-glow transition-smooth" onClick={() => scrollToSection("contact")}>
               Hire Me
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-primary hover:text-accent transition-smooth"
-          >
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-primary hover:text-accent transition-smooth">
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -128,22 +109,15 @@ const Navigation = ({ data }: NavigationProps) => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
+                  aria-label="Go to section"
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left px-4 py-3 text-sm font-medium transition-smooth hover:bg-primary/10 rounded-lg ${
-                    activeSection === item.id 
-                      ? "text-primary bg-primary/10" 
-                      : "text-secondary"
-                  }`}
+                  className={`text-left px-4 py-3 text-sm font-medium transition-smooth hover:bg-primary/10 rounded-lg ${activeSection === item.id ? "text-primary bg-primary/10" : "text-secondary"}`}
                 >
                   {item.label}
                 </button>
               ))}
               <div className="pt-2 border-t border-primary/20 mt-2">
-                <Button 
-                  size="sm"
-                  className="w-full bg-gradient-primary hover:shadow-glow transition-smooth"
-                  onClick={() => scrollToSection("contact")}
-                >
+                <Button aria-label="Hire Me" size="sm" className="w-full bg-gradient-primary hover:shadow-glow transition-smooth" onClick={() => scrollToSection("contact")}>
                   Hire Me
                 </Button>
               </div>
@@ -155,4 +129,5 @@ const Navigation = ({ data }: NavigationProps) => {
   );
 };
 
-export default Navigation;
+export default memo(Navigation);
+// export default) Navigation;

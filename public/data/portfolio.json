@@ -1,12 +1,13 @@
 {
   "personal": {
-    "name": "Alex Chen",
-    "title": "Senior Full-Stack Developer",
-    "subtitle": "Crafting exceptional digital experiences with modern technologies",
-    "bio": "Passionate developer with 8+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, helping companies transform their digital presence.",
-    "email": "alex.chen@portfolio.dev",
-    "location": "San Francisco, CA",
-    "phone": "+1 (555) 123-4567"
+    "logoName":"Mohamed",
+    "name": "MohamedElsheshtawey ",
+    "title": "Junior MERN Stack Developer",
+    "subtitle": "Building Modern, Scalable Web Applications with Passion",
+    "bio": "I am a dedicated web developer with a strong focus on the MERN stack (MongoDB, Express.js, React, Node.js). I enjoy crafting efficient, scalable, and user-friendly applications, and I’m passionate about leveraging modern technologies to create meaningful digital experiences.",
+    "email": "mohamed.elsheshtawey@example.com",
+    "location": "Cairo, Egypt",
+    "phone": "+201201585814"
   },
   "navigation": {
     "home": "Home",
@@ -25,7 +26,7 @@
     },
     "about": {
       "title": "About Me",
-      "description": "I'm a passionate full-stack developer who loves creating innovative solutions that make a difference. With expertise in modern web technologies, I help businesses bring their ideas to life through clean, efficient, and scalable code.",
+     "description": "My name is Mohamed Elsheshtawey, and I’m a self-taught MERN Stack developer. I initially studied law, but my passion for coding led me to teach myself web development from the ground up. Over the years, I’ve worked on multiple freelance projects, focusing on building applications that are not only visually appealing but also functional and impactful. My expertise lies in MongoDB, Express, React, and Node.js, and I leverage modern tools and practices to ensure smooth, scalable, and maintainable solutions. I thrive on problem-solving and continuously learning, and I love helping clients turn their ideas into real, working products.",
       "skills": [
         {
           "name": "HTML",

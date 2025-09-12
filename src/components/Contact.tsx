@@ -8,21 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Mail, 
-  MapPin, 
-  Phone, 
-  Send, 
-  Github, 
-  Linkedin, 
-  Twitter,
-  CheckCircle,
-  AlertCircle,
-  Rocket,
-  User,
-  MessageSquare,
-  Clock
-} from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, CheckCircle, AlertCircle, Rocket, User, MessageSquare, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/types/portfolio";
 import { useToast } from "@/hooks/use-toast";
 
@@ -104,9 +90,10 @@ const Contact = ({ data }: ContactProps) => {
       href: `mailto:${data.personal.email}`,
     },
     {
-      icon: Clock,
-      label: "Response Time",
-      value: "Within 24 hours",
+      icon: MessageCircle,
+      label: "WhatsApp",
+      value: "+20 120 158 5814",
+      href: "https://wa.me/201201585814",
     },
     {
       icon: Phone,
@@ -120,20 +107,20 @@ const Contact = ({ data }: ContactProps) => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
-      color: "hover:text-white"
+      href: "https://github.com/Elsheshtawey1",
+      color: "hover:text-white",
     },
     {
       icon: Linkedin,
-      label: "LinkedIn", 
-      href: "https://linkedin.com",
-      color: "hover:text-blue-400"
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/mohamed-elsheshtawey/",
+      color: "hover:text-blue-400",
     },
     {
       icon: Twitter,
       label: "Twitter",
-      href: "https://twitter.com",
-      color: "hover:text-blue-400"
+      href: "https://x.com/mohamed63857594",
+      color: "hover:text-blue-400",
     },
   ];
 
