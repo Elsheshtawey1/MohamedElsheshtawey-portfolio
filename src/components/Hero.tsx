@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { TypingText } from "@/components/animations/TypingText";
 import { ShinyText } from "@/components/animations/ShinyText";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-background.webp";
 
 interface HeroProps {
   data: {
@@ -83,9 +83,9 @@ const Hero = ({ data }: HeroProps) => {
 
           {/* Title with Typing Effect and Shiny Animation */}
           <m.h2 variants={itemVariants} transition={{ duration: 0.6 }} className="text-2xl md:text-4xl lg:text-5xl font-semibold text-primary mb-6">
-            <ShinyText shimmerDuration={2.5} wordByWord={true} staggerDelay={0.4}>
+            
               <TypingText text={data.personal.title} speed={80} onComplete={() => setTypingComplete(true)} />
-            </ShinyText>
+            
           </m.h2>
 
           {/* Subtitle with Shiny Animation */}
@@ -109,9 +109,9 @@ const Hero = ({ data }: HeroProps) => {
               asChild
             >
               <a href="/Mohamed_ElsheshtaweCV_Balanced.pdf" download className="flex items-center">
-                <ShinyText wordByWord={true} staggerDelay={0.3}>
+               
                   Download My CV
-                </ShinyText>
+              
               </a>
             </Button>
           </m.div>
