@@ -1,0 +1,119 @@
+{
+  "personal": {
+    "name": "Alex Chen",
+    "title": "Senior Full-Stack Developer",
+    "subtitle": "Crafting exceptional digital experiences with modern technologies",
+    "bio": "Passionate developer with 8+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, helping companies transform their digital presence.",
+    "email": "alex.chen@portfolio.dev",
+    "location": "San Francisco, CA",
+    "phone": "+1 (555) 123-4567"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "sections": {
+    "hero": {
+      "greeting": "Hi, I'm",
+      "cta": {
+        "primary": "View My Work",
+        "secondary": "Get In Touch"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "description": "I'm a passionate full-stack developer who loves creating innovative solutions that make a difference. With expertise in modern web technologies, I help businesses bring their ideas to life through clean, efficient, and scalable code.",
+      "skills": [
+        {
+          "name": "HTML",
+          "icon": "HTML",
+          "category": "language",
+          "color": "#e34f26"
+        },
+        {
+          "name": "CSS",
+          "icon": "CSS",
+          "category": "language",
+          "color": "#1572b6"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "JS",
+          "category": "language",
+          "color": "#f7df1e"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "TS",
+          "category": "language",
+          "color": "#3178c6"
+        },
+        {
+          "name": "React",
+          "icon": "⚛️",
+          "category": "framework",
+          "color": "#61dafb"
+        },
+        {
+          "name": "Next.js",
+          "icon": "▲",
+          "category": "framework",
+          "color": "#000000"
+        },
+        {
+          "name": "Node.js",
+          "icon": "🟢",
+          "category": "runtime",
+          "color": "#339933"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "🍃",
+          "category": "database",
+          "color": "#47a248"
+        },
+        {
+          "name": "Express",
+          "icon": "EX",
+          "category": "framework",
+          "color": "#000000"
+        },
+        {
+          "name": "Strapi",
+          "icon": "ST",
+          "category": "cms",
+          "color": "#2f2e8b"
+        },
+        {
+          "name": "Redux",
+          "icon": "RX",
+          "category": "state",
+          "color": "#764abc"
+        },
+        {
+          "name": "Framer Motion",
+          "icon": "FM",
+          "category": "animation",
+          "color": "#ff0055"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "subtitle": "A showcase of my recent work and technical achievements"
+    },
+    "contact": {
+      "title": "Let's Work Together",
+      "subtitle": "I'm always interested in new opportunities and collaborations",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message"
+      }
+    }
+  }
+}
