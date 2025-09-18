@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/tooltip";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
+import { memo } from "react";
 
 interface SkillsProps {
   skills: Array<{
@@ -130,4 +131,4 @@ const Skills = ({ skills }: SkillsProps) => {
   );
 };
 
-export default Skills;
+export default memo(Skills);

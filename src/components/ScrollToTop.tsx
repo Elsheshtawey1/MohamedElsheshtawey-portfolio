@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronUp } from "lucide-react";
 
@@ -41,4 +41,6 @@ const ScrollToTop = () => {
   );
 };
 
-export default ScrollToTop;
+export default memo(ScrollToTop);
+
+// import ScrollToTop;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
@@ -77,7 +77,7 @@ const Hero = ({ data }: HeroProps) => {
           </m.p>
 
           {/* Name with Gradient */}
-          <m.h1 variants={itemVariants} transition={{ duration: 0.6 }} className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
+          <m.h1 variants={itemVariants} transition={{ duration: 0.6 }} className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
             <span className="gradient-text">{data.personal.name}</span>
           </m.h1>
 
@@ -89,7 +89,7 @@ const Hero = ({ data }: HeroProps) => {
           </m.h2>
 
           {/* Subtitle with Shiny Animation */}
-          <m.p variants={itemVariants} transition={{ duration: 0.6 }} className="text-lg md:text-xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
+          <m.p variants={itemVariants} transition={{ duration: 0.6 }} className="text-md md:text-xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
             <ShinyText shimmerDuration={3} shimmerWidth={80} wordByWord={true} staggerDelay={0.2}>
               {data.personal.subtitle}
             </ShinyText>
@@ -188,4 +188,4 @@ const Hero = ({ data }: HeroProps) => {
   );
 };
 
-export default Hero;
+export default memo(Hero); 

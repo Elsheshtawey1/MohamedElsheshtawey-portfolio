@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Code2, Sparkles, Target, Users, Award, Coffee } from "lucide-react";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
+import { memo } from "react";
 
 interface AboutProps {
   data: {
@@ -80,7 +81,7 @@ const About = ({ data }: AboutProps) => {
           >
             {/* Main Description Card */}
             <Card className="p-8 bg-surface-elevated border-primary/10 shadow-elegant">
-              <div className="space-y-6">
+              <div className="space-y-6 p-1">
                 <p className="text-xl text-primary leading-relaxed font-medium">{data.sections.about.description}</p>
                 <div className="h-px bg-gradient-primary/30 rounded-full" />
                 <p className="text-lg text-secondary leading-relaxed">{data.personal.bio}</p>
@@ -138,4 +139,4 @@ const About = ({ data }: AboutProps) => {
   );
 };
 
-export default About;
+export default memo(About);
