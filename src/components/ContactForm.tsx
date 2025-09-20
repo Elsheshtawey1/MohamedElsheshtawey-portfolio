@@ -1,4 +1,4 @@
-import { memo, useState, useCallback } from "react";
+import { memo, useState, useRef, useCallback } from "react";
 import { m } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Send, Rocket, User, MessageSquare } from "lucide-react";
-import { ContactForm as ContactFormType } from "@/types/portfolio";
 import { useToast } from "@/hooks/use-toast";
+import { sendTemplate, EmailVariables } from "@/lib/emailjsClient";
 
 interface ContactFormProps {
   labels: {
@@ -20,39 +20,39 @@ interface ContactFormProps {
 
 const ContactForm = ({ labels }: ContactFormProps) => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState<ContactFormType>({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  }, []);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
       setIsSubmitting(true);
 
+      const variables: EmailVariables = {
+        user_name: nameRef.current?.value ?? "",
+        user_email: emailRef.current?.value ?? "",
+        message: messageRef.current?.value ?? "",
+      };
+
       try {
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await sendTemplate(variables);
 
         setIsSubmitted(true);
-
         toast({
           title: "Message sent successfully!",
           description: "Thank you for reaching out. I'll get back to you soon.",
           className: "bg-green-500/20 border-green-500/30 text-green-400",
         });
 
-        setFormData({ name: "", email: "", message: "" });
+        // Clear form fields
+        if (nameRef.current) nameRef.current.value = "";
+        if (emailRef.current) emailRef.current.value = "";
+        if (messageRef.current) messageRef.current.value = "";
 
-        // Reset submitted state after animation
         setTimeout(() => setIsSubmitted(false), 2000);
       } catch (error) {
         toast({
@@ -60,6 +60,7 @@ const ContactForm = ({ labels }: ContactFormProps) => {
           description: "Please try again or contact me directly via email.",
           variant: "destructive",
         });
+        console.error(error);
       } finally {
         setIsSubmitting(false);
       }
@@ -83,16 +84,7 @@ const ContactForm = ({ labels }: ContactFormProps) => {
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <User className="h-5 w-5 text-secondary" />
               </div>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={handleInputChange}
-                className="pl-11 bg-surface border-primary/20 focus:border-primary text-primary"
-                placeholder="Your full name"
-              />
+              <Input id="name" name="name" type="text" required ref={nameRef} className="pl-11 bg-surface border-primary/20 focus:border-primary text-primary" placeholder="Your full name" />
             </div>
           </div>
 
@@ -110,8 +102,7 @@ const ContactForm = ({ labels }: ContactFormProps) => {
                 name="email"
                 type="email"
                 required
-                value={formData.email}
-                onChange={handleInputChange}
+                ref={emailRef}
                 className="pl-11 bg-surface border-primary/20 focus:border-primary text-primary"
                 placeholder="your.email@example.com"
               />
@@ -131,8 +122,7 @@ const ContactForm = ({ labels }: ContactFormProps) => {
                 id="message"
                 name="message"
                 required
-                value={formData.message}
-                onChange={handleInputChange}
+                ref={messageRef}
                 className="pl-11 bg-surface border-primary/20 focus:border-primary text-primary min-h-32 resize-none"
                 placeholder="Tell me about your project or just say hello..."
               />
