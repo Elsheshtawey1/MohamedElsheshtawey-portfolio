@@ -34,7 +34,6 @@ const Navigation = ({ data }: NavigationProps) => {
   useEffect(() => {
     sectionsRef.current = navItems.map((item) => document.getElementById(item.id));
   }, [navItems]);
-  // استخدام التحديث الدالي لتجنب إضافة متغيرات الحالة إلى تبعيات useCallback
   const handleScroll = useCallback(() => {
     const scrollPos = window.scrollY;
     const scrolled = scrollPos > 50;
@@ -73,7 +72,7 @@ const Navigation = ({ data }: NavigationProps) => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-smooth">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <h1>{data.personal.name}</h1>
+            <h1>Mohamed</h1>
           </button>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
