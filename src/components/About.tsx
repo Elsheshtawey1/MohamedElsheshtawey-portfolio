@@ -80,7 +80,7 @@ const About = ({ data }: AboutProps) => {
             className="lg:col-span-3 space-y-8"
           >
             {/* Main Description Card */}
-            <Card className="p-8 bg-surface-elevated border-primary/10 shadow-elegant">
+            <Card className="p-3 bg-surface-elevated border-primary/10 shadow-elegant">
               <div className="space-y-6 p-1">
                 <p className="text-xl text-primary leading-relaxed font-medium">{data.sections.about.description}</p>
                 <div className="h-px bg-gradient-primary/30 rounded-full" />

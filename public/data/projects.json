@@ -47,14 +47,7 @@
         "overview": "Developed a collaborative task management application that enables teams to organize, track, and complete projects efficiently with real-time synchronization across all devices.",
         "challenges": "Implementing real-time collaboration features, handling concurrent updates, and creating an intuitive user interface for complex project structures.",
         "solutions": "Used Socket.io for real-time communication, implemented optimistic updates, and created a flexible component-based architecture.",
-        "features": [
-          "Real-time collaboration",
-          "Drag & drop task management",
-          "Team workspaces",
-          "File attachments",
-          "Due date notifications",
-          "Progress tracking"
-        ],
+        "features": ["Real-time collaboration", "Drag & drop task management", "Team workspaces", "File attachments", "Due date notifications", "Progress tracking"],
         "technologies": {
           "frontend": ["React", "TypeScript", "Material-UI", "Socket.io Client"],
           "backend": ["Node.js", "Express", "MongoDB", "Socket.io"],
@@ -66,36 +59,568 @@
         }
       }
     },
+
     {
-      "id": "weather-dashboard",
-      "title": "Weather Analytics Dashboard",
-      "description": "Real-time weather data visualization with predictive analytics",
-      "image": "/images/weather-dashboard.jpg",
-      "tags": ["Next.js", "Chart.js", "OpenWeather API", "Vercel"],
-      "category": "Frontend",
-      "status": "completed", 
-      "year": 2023,
+      "id": "ShopEase",
+      "title": "ShopEase",
+      "description": "A modern, feature-rich e-commerce platform with user authentication, product catalog, shopping cart, wishlist, and multi-step checkout, built with React and Redux Toolkit.",
+      "image": "/images/shopease.jpg",
+      "tags": ["react", "redux", "e-commerce", "firebase", "responsive"],
+      "category": "Full Stack",
+      "status": "in-progress",
+      "year": 2025,
       "featured": true,
       "details": {
-        "overview": "Created an advanced weather analytics dashboard that provides real-time weather data, historical trends, and predictive forecasting using machine learning algorithms.",
-        "challenges": "Handling large datasets, creating responsive data visualizations, and implementing accurate weather prediction algorithms.",
-        "solutions": "Implemented data caching strategies, used Chart.js for interactive visualizations, and integrated multiple weather APIs for accuracy.",
+        "overview": "ShopEase is a comprehensive e-commerce platform providing a seamless and intuitive shopping experience. Features include secure authentication, product browsing, shopping cart, wishlist, multi-step checkout, and responsive design across all devices.",
+        "challenges": "Integrating secure user authentication, maintaining centralized state with Redux Toolkit, ensuring responsiveness and performance, and supporting internationalization.",
+        "solutions": "Implemented React with Redux Toolkit for scalable state management, Firebase for authentication, Axios for API requests, i18next for multilingual support, and responsive design using modern CSS techniques.",
         "features": [
-          "Real-time weather updates",
-          "Historical data analysis",
-          "Interactive charts and graphs",
-          "Location-based forecasting",
-          "Weather alerts and notifications",
-          "Mobile-optimized interface"
+          "Secure user registration and login, including Google Sign-In.",
+          "Browse products by category, search, and view detailed product pages.",
+          "Add and manage products in a persistent shopping cart.",
+          "Save favorite items to a personal wishlist.",
+          "Multi-step checkout with shipping, payment, and order confirmation.",
+          "User profile page to view order history and manage information.",
+          "Internationalization for multiple languages.",
+          "Responsive mobile-first design.",
+          "Centralized state management using Redux Toolkit.",
+          "Graceful error handling with custom boundaries and fallback components."
         ],
         "technologies": {
-          "frontend": ["Next.js", "TypeScript", "Chart.js", "Tailwind CSS"],
-          "apis": ["OpenWeather API", "Weather Underground", "NASA Climate Data"],
-          "deployment": ["Vercel", "Edge Functions"]
+          "frontend": ["React", "Redux Toolkit", "React Router", "Axios", "i18next"],
+          "backend": ["Firebase"],
+          "build-tool": ["Vite"]
         },
         "links": {
-          "live": "https://weather-analytics.dev",
-          "github": "https://github.com/alexchen/weather-dashboard"
+          "live": "https://shop-ease-nine-wine.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/shopEase"
+        }
+      }
+    },
+
+    {
+      "id": "EconomyAuthApp",
+      "title": "Economy Auth App",
+      "description": "A front-end dashboard for a mobile app focused on income management and savings, featuring user authentication, expense tracking, income management, data visualization, and an admin panel.",
+      "image": "/images/economy-auth.jpg",
+      "tags": ["react", "vite", "dashboard", "finance", "responsive"],
+      "category": "Full Stack",
+      "status": "completed",
+      "year": 2025,
+      "featured": true,
+      "details": {
+        "overview": "Economy Auth App is a front-end dashboard designed for CS and IT students to manage income and expenses effectively. It provides secure authentication, interactive charts, and an admin panel for managing users and price data.",
+        "challenges": "Designing a responsive and interactive dashboard, implementing secure user authentication, managing complex state with API interactions, and integrating real-time data visualization.",
+        "solutions": "Implemented React with Vite for fast development, React Hook Form with Zod for validation, Axios for API requests, Recharts for charts, SweetAlert2 for notifications, and TanStack Query for data fetching and caching.",
+        "features": [
+          "Secure user registration and login system.",
+          "Dashboard overview of total income, expenses, and balance.",
+          "Add, edit, and delete expenses with categories.",
+          "Record income sources and amounts.",
+          "Interactive charts and graphs for financial insights.",
+          "Admin panel to manage users and platform statistics.",
+          "CSV file upload for price data by admins."
+        ],
+        "technologies": {
+          "frontend": ["React", "Vite", "React Router", "React Hook Form", "Zod", "Axios", "Recharts", "SweetAlert2", "TanStack Query"],
+          "backend": [],
+          "build-tool": ["Vite"]
+        },
+        "links": {
+          "live": "https://drive.google.com/file/d/1gVGSKOwnwrCnTK8DZEAPHo9Q9BP_xJyA/view?usp=sharing",
+          "github": "https://github.com/Elsheshtawey1/economy-auth-app"
+        }
+      }
+    },
+
+    {
+      "id": "CRUD Product Management",
+      "title": "CRUD Product Management",
+      "description": "A simple and intuitive CRUD application for managing products, allowing users to add, view, edit, and delete products efficiently.",
+      "image": "/images/crud-product.jpg",
+      "tags": ["react", "crud", "typescript", "tailwind", "inventory"],
+      "category": "Frontend",
+      "status": "completed",
+      "featured": true,
+      "year": 2025,
+      "details": {
+        "overview": "This CRUD Product Management application is a modern, responsive front-end tool built with React and TypeScript, providing a user-friendly interface for basic inventory management with full Create, Read, Update, and Delete functionality.",
+        "challenges": "Ensuring seamless CRUD operations with proper form validation, real-time feedback, and efficient state management for a smooth user experience.",
+        "solutions": "Utilized React and TypeScript for robust front-end structure, Tailwind CSS for responsive design, React Hot Toast for notifications, and Headless UI for accessible modals and components.",
+        "features": [
+          "Full CRUD functionality: Create, Read, Update, Delete products.",
+          "Add new products with title, description, image URL, price, colors, and category.",
+          "View all products in a clean grid layout.",
+          "Edit existing products via a modal.",
+          "Delete products with confirmation to avoid mistakes.",
+          "Client-side form validation.",
+          "Real-time toast notifications for feedback.",
+          "Assign colors and categories for better product organization."
+        ],
+        "technologies": {
+          "frontend": ["React", "TypeScript", "Tailwind CSS", "Headless UI", "Heroicons", "React Hot Toast", "UUID"],
+          "build-tool": ["Vite"]
+        },
+        "links": {
+          "live": "https://model-builder-liart.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/model-Builder"
+        }
+      }
+    },
+
+    {
+      "id": "Restaurant Website",
+      "title": "Restaurant Website",
+      "description": "A modern, responsive single-page application (SPA) for showcasing a restaurant, including its menu, chefs, testimonials, and contact information.",
+      "image": "/images/restaurant-website.jpg",
+      "tags": ["react", "spa", "responsive-design", "restaurant", "portfolio"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2025,
+      "details": {
+        "overview": "This Restaurant Website is a modern and responsive single-page application built with React. It provides an engaging online presence for customers to explore the restaurant's offerings, meet the chefs, read testimonials, and contact the restaurant seamlessly across all devices.",
+        "challenges": "Creating a smooth and visually appealing SPA with responsive design, interactive animations, and efficient navigation across multiple sections.",
+        "solutions": "Used React for component-based architecture, React Router DOM for routing, Framer Motion and Swiper for animations, @emotion/react for styling, and other modern libraries to enhance user experience.",
+        "features": [
+          "Home Page with Hero Section, Special Dishes Showcase, Chefs Introduction, Testimonials, and Newsletter Subscription.",
+          "About Us Page detailing restaurant's history, philosophy, and values.",
+          "Contact Us Page with contact form, location, and contact details.",
+          "Responsive Design for desktops, tablets, and mobile devices.",
+          "Smooth Navigation with an intuitive navbar.",
+          "Dynamic Animations and Transitions for modern feel."
+        ],
+        "technologies": {
+          "frontend": ["React.js", "React Router DOM", "Framer Motion", "React Icons", "React Spinners", "React Helmet", "JavaScript (JSX)"],
+          "build-tool": ["Vite"],
+          "linting": ["ESLint"]
+        },
+        "links": {
+          "live": "https://restaurant-website-plum-delta.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/restaurant-website"
+        }
+      }
+    },
+
+    {
+      "id": "Personal Portfolio Website",
+      "title": "Personal Portfolio Website",
+      "description": "A modern, single-page personal portfolio website built with React to showcase your work, skills, services, and provide an easy way for clients to get in touch.",
+      "image": "/images/personal-portfolio.jpg",
+      "tags": ["portfolio", "react", "framer-motion", "swiper", "responsive-design"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "This Personal Portfolio Website is a single-page React application designed to present your work, skills, and services professionally. It includes a dynamic project gallery, services and process sections, a contact form, and responsive design for all devices.",
+        "challenges": "Creating an interactive and responsive single-page application that effectively showcases portfolio projects while maintaining smooth animations and usability across devices.",
+        "solutions": "Implemented React with component-based architecture, used Material-UI and Bootstrap for UI, integrated Framer Motion and Swiper for animations and carousels, and Axios for potential API requests.",
+        "features": [
+          "Dynamic Portfolio Gallery: Showcase projects in an interactive carousel.",
+          "Services Section: Clearly list and describe offered services.",
+          "Process Section: Explain work methodology to build client trust.",
+          "Contact Form: Easy way for visitors to get in touch.",
+          "Responsive Design: Optimized for desktops, tablets, and mobile devices.",
+          "Engaging Animations: Subtle transitions and animations enhance UX."
+        ],
+        "technologies": {
+          "frontend": ["React", "React Router", "Framer Motion", "Swiper", "Axios", "wowjs"],
+          "deployment": ["GitHub Pages", "Vercel"]
+        },
+        "links": {
+          "live": "https://portfolio-rouge-two-82.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/portfolio-temp"
+        }
+      }
+    },
+
+    {
+      "id": "PixelPerfect",
+      "title": "PixelPerfect Website",
+      "description": "The official website for PixelPerfect, a digital agency specializing in creating beautiful, functional, and user-centric digital experiences.",
+      "image": "/images/pixelperfect.jpg",
+      "tags": ["portfolio", "react", "tailwind", "framer-motion", "gsap", "website"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "PixelPerfect Website is a responsive and modern digital agency website built with React, Tailwind CSS, Framer Motion, and GSAP. It showcases the agency's services, portfolio, and contact options while emphasizing user-centric design and smooth animations.",
+        "challenges": "Building a visually appealing website with smooth animations, responsive layout, and maintaining a clean code structure using modern front-end technologies.",
+        "solutions": "Implemented React for component-based architecture, Tailwind CSS for responsive styling, Framer Motion and GSAP for engaging animations, and a clear structure for easy navigation and scalability.",
+        "features": [
+          "Showcases Services and Portfolio: Highlights agency projects and services in a visually appealing manner.",
+          "Responsive Design: Works flawlessly across desktops, tablets, and mobile devices.",
+          "Smooth Animations: Uses Framer Motion and GSAP for interactive and engaging effects.",
+          "Component-Based Architecture: Built with React for reusability and maintainability.",
+          "Easy Navigation: Clear menu structure for quick access to all sections.",
+          "Clean Code and Modern Tooling: Built with Vite, ESLint, and organized folder structure."
+        ],
+        "technologies": {
+          "frontend": ["React", "React Router", "Tailwind CSS", "Framer Motion"],
+          "build-tool": ["Vite"],
+          "deployment": ["Vercel"]
+        },
+        "links": {
+          "live": "https://start-nmhp9ycb5-elsheshtawey1s-projects.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/pixelperfect-website"
+        }
+      }
+    },
+
+    {
+      "id": "Alert Component",
+      "title": "React Alert Component",
+      "description": "A customizable React Alert component built with TypeScript and SCSS, supporting multiple alert types with icons, titles, and descriptions.",
+      "image": "/images/react-alert.jpg",
+      "tags": ["portfolio", "react", "typescript", "component", "ui", "scss"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "This project is a reusable React Alert component designed with TypeScript for type safety. It supports multiple alert types, custom icons, titles, descriptions, and is fully responsive with SCSS styling.",
+        "challenges": "Creating a flexible, type-safe component that supports multiple alert types, custom content, and maintains responsiveness across various screen sizes.",
+        "solutions": "Implemented a fully customizable component with props for type, icon, title, and description, styled with SCSS for maintainability and integrated with React and TypeScript for a smooth developer experience.",
+        "features": [
+          "Multiple Alert Types: Supports danger, success, info, warning, and primary alerts.",
+          "Customizable: Easily change icon, title, and description.",
+          "Dismissible: Includes a close button to dismiss the alert.",
+          "Responsive Design: Adapts well to different screen sizes.",
+          "Built with TypeScript: Provides type safety for better development experience.",
+          "Styled with SCSS: Organized and maintainable styles."
+        ],
+        "technologies": {
+          "frontend": ["React", "TypeScript", "SCSS", "Vite", "Lucide React", "ESLint"],
+          "deployment": ["Vercel"]
+        },
+        "links": {
+          "live": "https://alert-system-three.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/Alert-system"
+        }
+      }
+    },
+
+    {
+      "id": "Food Lover Restaurant",
+      "title": "Food Lover Restaurant Website",
+      "description": "A responsive and visually appealing website for 'Food Lover,' a modern restaurant. Showcases the menu, special offers, and gallery while providing a seamless user experience across all devices.",
+      "image": "/images/food-lover.jpg",
+      "tags": ["portfolio", "responsive-design", "website", "restaurant", "html-css-js"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2023,
+      "details": {
+        "overview": "Food Lover is a modern, responsive website designed to present the offerings of a contemporary restaurant. Built with HTML5, CSS3, and JavaScript, it highlights the restaurant's menu, special promotions, and gallery in an engaging and user-friendly layout.",
+        "challenges": "Ensuring a fully responsive design across desktops, tablets, and mobile devices, while maintaining intuitive navigation and visually appealing content.",
+        "solutions": "Implemented a responsive layout, interactive menu and gallery sections, smooth scrolling navigation, and easy-to-access contact options for a seamless user experience.",
+        "features": [
+          "Fully Responsive Design: Provides a consistent and polished layout across all devices.",
+          "Navigation Bar with Smooth Scrolling: Easy access to different sections of the website.",
+          "Interactive Menu Section: Organized display of dishes with pricing details.",
+          "Image Gallery: Showcases the restaurant's food and ambiance in an attractive manner.",
+          "Special Offers Section: Highlights current promotions and deals.",
+          "Functional Contact Form: Allows users to send messages directly to the restaurant.",
+          "Click-to-Call/Email Links: Quick access to phone and email communication."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/FOOD-LOVER/",
+          "github": "https://github.com/Elsheshtawey1/FOOD-LOVER"
+        }
+      }
+    },
+    {
+      "id": "Landing iPhone Page",
+      "title": "Landing iPhone Page",
+      "description": "A responsive landing page for the iPhone 13 Pro Max, showcasing its features with an interactive and visually engaging design.",
+      "image": "/images/landing-iphone.jpg",
+      "tags": ["portfolio", "responsive-design", "website", "landing-page", "javascript"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2023,
+      "details": {
+        "overview": "This project is a fully responsive landing page designed for the iPhone 13 Pro Max. Built with HTML5, CSS3, and JavaScript, it highlights the phone's features with interactive elements and a visually appealing layout that adapts to desktops, tablets, and mobile devices.",
+        "challenges": "Creating a responsive, interactive product showcase that adapts to different screen sizes while maintaining a smooth user experience, and persisting user preferences using localStorage.",
+        "solutions": "Implemented a dynamic product display system with clickable thumbnails, color-changing backgrounds, a responsive navigation menu, and persistent user choice to enhance engagement.",
+        "features": [
+          "Fully Responsive Design: Adapts seamlessly to all screen sizes, including desktops, tablets, and mobiles.",
+          "Interactive Product Showcase: Users can click on thumbnails to change the main product image and page background color.",
+          "Persistent User Choice: Remembers the last selected phone and color using localStorage.",
+          "Mobile-Friendly Navigation: Hamburger menu implemented for easy navigation on smaller screens."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/LANDING-PAGE/",
+          "github": "https://github.com/Elsheshtawey1/LANDING-PAGE"
+        }
+      }
+    },
+    {
+      "id": "Time Zone",
+      "title": "Time Zone - Responsive Watch Store Website",
+      "description": "A responsive e-commerce front-end for a modern watch store, featuring a clean and user-friendly interface with smooth animations and professional design.",
+      "image": "/images/time-zone.jpg",
+      "tags": ["portfolio", "responsive-design", "website", "e-commerce", "javascript", "bootstrap"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2023,
+      "details": {
+        "overview": "Time Zone is a modern, responsive e-commerce front-end for a watch store. Built with HTML5, CSS3, Bootstrap 5, and JavaScript, it offers an engaging and professional design with smooth animations and a user-friendly interface.",
+        "challenges": "Creating a responsive layout that looks polished on all devices, implementing interactive features, and organizing product sections clearly for an intuitive shopping experience.",
+        "solutions": "Implemented a responsive grid system, interactive product cards with 'Add to Cart' functionality, smooth scroll animations using AOS, and a clear navigation system for easy browsing.",
+        "features": [
+          "Fully Responsive Design: Seamless layout on desktops, tablets, and mobile devices.",
+          "Interactive UI: Hover effects, smooth scrolling, and animated elements with AOS library.",
+          "Product Showcase: Dedicated sections for 'New Arrivals' and 'Popular Items'.",
+          "Image Gallery: Organized and visually appealing display of product images.",
+          "Add to Cart Functionality: Interactive product cards with 'Add to Cart' and 'Like' features.",
+          "Easy Navigation: Fixed navigation bar with dropdown menus for intuitive browsing.",
+          "Customizable Sections: 'Watch of Choice' sections for featured products or collections."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "Bootstrap 5", "JavaScript", "Font Awesome", "AOS"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/Time-Zone/",
+          "github": "https://github.com/Elsheshtawey1/Time-Zone"
+        }
+      }
+    },
+    {
+      "id": "To-Do List Web Application",
+      "title": "To-Do List Web Application",
+      "description": "A simple and responsive web-based to-do list application that helps users manage their daily tasks efficiently.",
+      "image": "/images/todo-list.jpg",
+      "tags": ["portfolio", "responsive-design", "web-app", "javascript", "html-css"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "This project is a responsive web-based to-do list application that enables users to organize their daily tasks efficiently. Built with HTML5, CSS3, and JavaScript, it offers a simple, intuitive interface for adding, completing, and deleting tasks.",
+        "challenges": "Ensuring persistent storage of tasks across browser sessions, creating an intuitive interface for task management, and maintaining responsiveness on both desktop and mobile devices.",
+        "solutions": "Implemented localStorage for task persistence, interactive task controls for marking and deleting tasks, and a responsive layout that works on all device sizes.",
+        "features": [
+          "Add Tasks: Quickly add new tasks to the list.",
+          "Mark as Complete: Click on a task to toggle its completed status.",
+          "Delete Tasks: Remove tasks that are no longer needed.",
+          "Persistent Storage: Tasks are saved in the browser's localStorage.",
+          "Responsive Design: Works seamlessly on desktops, tablets, and mobile devices.",
+          "Custom Alerts: Notify users when attempting to add an empty task."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "JavaScript (ES6)"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/to-do-list/",
+          "github": "https://github.com/Elsheshtawey1/to-do-list"
+        }
+      }
+    },
+    {
+      "id": "Weather App",
+      "title": "Weather App",
+      "description": "A simple and responsive web application that provides real-time weather information for any city worldwide, with dynamic visuals based on weather conditions.",
+      "image": "/images/weather-app.jpg",
+      "tags": ["portfolio", "responsive-design", "web-app", "javascript", "html-css", "api"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "Weather App is a responsive web application that allows users to search for any city and get up-to-date weather information. Built with HTML, CSS, and JavaScript, the app features dynamic backgrounds and icons that change according to the current weather conditions.",
+        "challenges": "Fetching real-time data from the OpenWeatherMap API and dynamically updating the UI to reflect various weather conditions while ensuring responsiveness across devices.",
+        "solutions": "Implemented API integration with OpenWeatherMap, dynamic UI updates based on weather data, and a responsive layout for smooth viewing on desktops, tablets, and mobile devices.",
+        "features": [
+          "City Search: Users can search for any city to get the latest weather updates.",
+          "Real-time Data: Displays current temperature, humidity, and wind speed.",
+          "Dynamic UI: Background and weather icon change according to weather conditions.",
+          "Responsive Design: Optimized layout for desktops, tablets, and mobile devices."
+        ],
+        "technologies": {
+          "frontend": ["HTML", "CSS", "JavaScript"],
+          "api": ["OpenWeatherMap API"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/Weather-App/",
+          "github": "https://github.com/Elsheshtawey1/Weather-App"
+        }
+      }
+    },
+    {
+      "id": "X O Game",
+      "title": "X O Game (Tic-Tac-Toe)",
+      "description": "A simple and classic web-based Tic-Tac-Toe game with interactive gameplay, winner announcement, and automatic restart.",
+      "image": "/images/xo-game.jpg",
+      "tags": ["portfolio", "web-game", "javascript", "html-css", "interactive"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "X O Game is a classic web-based Tic-Tac-Toe application built with HTML, CSS, and JavaScript. The game features interactive squares, highlights winning combinations, announces the winner, and automatically restarts for continuous play.",
+        "challenges": "Creating an intuitive and responsive interactive grid, accurately detecting winning combinations, and implementing automatic game reset while keeping the game engaging.",
+        "solutions": "Implemented interactive click events, winner detection logic, highlight effects for winning combinations, and a timed automatic restart for seamless gameplay.",
+        "features": ["Classic Tic-Tac-Toe gameplay.", "Highlights the winning combination.", "Announces the winner.", "Automatically restarts the game after a short delay."],
+        "technologies": {
+          "frontend": ["HTML", "CSS", "JavaScript"],
+          "deployment": ["GitHub Pages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/xo-game/",
+          "github": "https://github.com/Elsheshtawey1/xo-game"
+        }
+      }
+    },
+    {
+      "id": "flower-shop",
+      "title": "Flower Shop - Responsive E-commerce Website",
+      "description": "A responsive e-commerce website for a flower shop, built with HTML, CSS, Bootstrap 5, and JavaScript. Features sections for products, pricing, and a contact form, designed to be visually appealing and user-friendly on all devices.",
+      "image": "/images/weather-dashboard.jpg",
+      "tags": ["portfolio", "responsive-design", "responsive-design", "website", "e-commerce"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "A responsive e-commerce website for a flower shop, built with HTML, CSS, Bootstrap 5, and JavaScript. Features sections for products, pricing, and a contact form, designed to be visually appealing and user-friendly on all devices.",
+        "challenges": " Handling large datasets, creating responsive data visualizations, and implementing accurate weather prediction algorithms.",
+        "solutions": "Seamless product browsing, secure payment processing, and responsive design for a smooth shopping experience.",
+        "features": [
+          "Fully Responsive Design: Leverages the Bootstrap 5 framework to create a fluid layout that adapts perfectly to any screen size, providing a consistent and polished user experience.",
+          "Dynamic Scroll to Top Button: A JavaScript-powered button appears when the user scrolls down the page, offering a quick and convenient way to return to the top, enhancing site navigation.",
+          "dark-mode toggle button to switch between light and dark mode using local storage",
+          "Clear Calls-to-Action: Strategically placed buttons like Get Started, I Want More, and Start Project guide users toward engagement and action.",
+          "Responsive Product Grid: A visually appealing and functional grid of products that adapts to different screen sizes, allowing users to easily browse and select items."
+        ],
+        "technologies": {
+          "frontend": ["html", "css", "bootstrap 5", "javascript"],
+          "deployment": ["githubPages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/Flower-Shop-Rosebud/",
+          "github": "https://github.com/Elsheshtawey1/Flower-Shop-Rosebud"
+        }
+      }
+    },
+    {
+      "id": "bandi-team",
+      "title": "Bandi Team - Responsive Creative Agency Portfolio Website",
+      "description": "A responsive single-page portfolio website for a creative agency, built with HTML, CSS, Bootstrap 5, and JavaScript. Features sections for services, portfolio, team, and a blog, designed to be visually appealing and user-friendly on all devices.",
+      "image": "/images/weather-dashboard.jpg",
+      "tags": ["portfolio", "responsive-design", "responsive-design", "website"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2023,
+      "details": {
+        "overview": "Bandi Team is a sleek, responsive single-page web application designed for a modern creative agency. It serves as a dynamic digital brochure, elegantly presenting the agency's identity, services, portfolio, and team. The project focuses on delivering a seamless user experience with intuitive navigation and a visually engaging interface, ensuring that potential clients can effortlessly explore the agency's creative prowess.",
+        "challenges": "Handling large datasets, creating responsive data visualizations, and implementing accurate weather prediction algorithms.",
+        "solutions": "In today's digital landscape, a creative agency requires a compelling online presence that is both professional and accessible. Bandi Team addresses this need by providing:.",
+        "features": [
+          "Fully Responsive Design: Leverages the Bootstrap 5 framework to create a fluid layout that adapts perfectly to any screen size, providing a consistent and polished user experience.",
+          "Dynamic Scroll to Top Button: A JavaScript-powered button appears when the user scrolls down the page, offering a quick and convenient way to return to the top, enhancing site navigation.",
+          "Interactive charts and graphs",
+          "Clear Calls-to-Action: Strategically placed buttons like Get Started, I Want More, and Start Project guide users toward engagement and action."
+        ],
+        "technologies": {
+          "frontend": ["html", "css", "bootstrap 5"],
+          "deployment": ["githubPages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/bond/",
+          "github": "https://github.com/Elsheshtawey1/bond"
+        }
+      }
+    },
+    {
+      "id": "Creative Agencies",
+      "title": "Creative Agencies",
+      "description": "A sleek, responsive, and feature-rich static website template designed for modern creative agencies. Built with pure HTML5 and CSS3, Criativo offers a visually stunning platform to showcase services, portfolio, team, and insights with elegant animations and a professional dark-mode aesthetic.",
+      "image": "/images/weather-dashboard.jpg",
+      "tags": ["html", "css", "responsive-design", "front-end-project"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2023,
+      "details": {
+        "overview": "Criativo is a meticulously crafted static website template designed to meet the needs of today's forward-thinking creative agencies. The project's purpose is to provide a beautiful, professional, and highly performant online presence without the complexity and cost of a dynamic backend. It serves as a ready-to-use solution for agencies to present their brand story, showcase their portfolio, and attract new clients. With a focus on clean code, modern aesthetics, and a seamless user experience across all devices, Criativo empowers agencies to launch a stunning website quickly and efficiently.",
+        "challenges": "Many creative agencies struggle to find a website template that is both visually impressive and easy to manage. Custom websites are expensive and time-consuming to build, while many existing templates are generic, bloated with unnecessary features, or lack a professional, high-end feel. This leaves agencies with a subpar online presence that fails to reflect the quality of their creative work..",
+        "solutions": "Aesthetic Excellence: It provides a premium, dark-mode design that makes visual content pop, immediately conveying a sense of sophistication and creativity.",
+        "features": [
+          "Fully Responsive Design: Adapts flawlessly to desktops, tablets, and mobile devices, ensuring a consistent and engaging user experience for all visitors.",
+          "Engaging Animations & Transitions: Subtle, CSS-driven animations on scroll and hover bring the content to life, creating a dynamic and interactive browsing experience.",
+          "Functional Contact Form: A clean and simple layout for a functional contact form to capture client inquiries.",
+          "Fixed Background Attachments: Parallax-like effects in key sections create a sense of depth and visual interest."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "Font Awesome", "Google Fonts"],
+          "deployment": ["githubPages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/CREATIVE-AGENCY/",
+          "github": "https://github.com/Elsheshtawey1/CREATIVE-AGENCY"
+        }
+      }
+    },
+    {
+      "id": "Destiny",
+      "title": "Destiny A Fully Responsive Landing Page ",
+      "description": "Destiny is a modern, single-page template built with HTML, CSS, and Bootstrap 5. It features a clean, professional design that is fully responsive and optimized for all devices, from mobile phones to desktops. It's the perfect starting point for showcasing any new web or mobile application.",
+      "image": "/images/weather-dashboard.jpg",
+      "tags": ["html", "css", "bootstrap 5", "responsive-design", "front-end-project"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2024,
+      "details": {
+        "overview": "Destiny project is a responsive, single-page website template designed to serve as a professional and engaging landing page for a modern software application. Its purpose is to provide developers and businesses with a solid, well-structured foundation for showcasing their product's features, benefits, and value proposition. The scope of the project encompasses a complete, visually appealing front-end experience, featuring a variety of essential sections such as a hero header, feature highlights, statistics, pricing tiers, and a promotional video player. Built with a mobile-first philosophy, it ensures a seamless and intuitive user experience across all device sizes.",
+        "challenges": "Many new applications and startups struggle to create a compelling and professional first impression. Building a landing page from scratch is time-consuming and requires significant design and front-end development effort. Without a clean, responsive, and trustworthy-looking site, it's difficult to capture user interest and effectively communicate a product's value.",
+        "solutions": "The Destiny template solves this by providing a ready-to-use, beautifully designed, and fully responsive landing page. It accelerates the go-to-market process by offering a complete suite of pre-built sections that are essential for any product launch. By leveraging the power and reliability of the Bootstrap 5 framework, it guarantees a consistent and high-quality user experience on any device, allowing creators to focus on their product's core functionality instead of on front-end boilerplate.",
+        "features": [
+          "Fully Responsive Design: Adapts flawlessly to desktops, tablets, and mobile devices, ensuring a consistent and engaging user experience for all visitors.",
+          "Modern & Clean UI: A minimalist and contemporary design aesthetic that puts the focus on the content, creating a professional and trustworthy impression.",
+          "Comprehensive Component Suite: Includes all the essential sections for a product launch: a compelling hero, feature highlights, detailed descriptions, a video showcase, app statistics, and a clear pricing table.",
+          "Easy Customization: The code is well-structured and uses standard HTML and CSS, making it simple to modify text, images, and color schemes to fit any brand identity.",
+          "Built with Bootstrap 5: Leverages the world's most popular front-end framework for reliability, consistency, and ease of customization."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "Bootstrap 5", "Font Awesome", "Google Fonts"],
+          "deployment": ["githubPages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/Destiny",
+          "github": "https://github.com/Elsheshtawey1/Destiny"
+        }
+      }
+    },
+    {
+      "id": "Twitter Clone",
+      "title": "Twitter Clone",
+      "description": "This project is a static, front-end clone of the X (formerly Twitter) user interface, developed to sharpen my HTML and CSS skills. It's a deep dive into recreating a complex, real-world application, focusing on layout, responsiveness, and component-based design. More than just a copy, this was an exercise in dissecting a professional UI to understand the principles behind its structure and user experience.",
+      "image": "/images/weather-dashboard.jpg",
+      "tags": ["html", "css", "responsive-design", "front-end-project"],
+      "category": "Frontend",
+      "status": "in-progress",
+      "year": 2022,
+      "details": {
+        "overview": "The goal was to build a high-fidelity, static replica of the X/Twitter web interface using only HTML and CSS. The project captures the platform's iconic three-column layout, including the persistent navigation sidebar, the central tweet feed, and the right-hand utility column with trends and suggestions. The focus was on creating a clean, responsive design that provides a familiar user experience across different screen sizes, from desktop to mobile.",
+        "challenges": "How to translate a dynamic, feature-rich application into a static but realistic front-end project.",
+        "solutions": "I focused on the core visual elements and layout. By breaking down the UI into components—like the navigation bar, tweet composer, individual tweets, and sidebars—I could systematically build the interface piece by piece, ensuring structural integrity and styling accuracy without needing a backend.",
+        "features": [
+          "Responsive Three-Column Layout: The classic Twitter UI, which collapses intelligently on smaller screens for a seamless mobile experience.Fixed Navigation Sidebar: A persistent left-hand navigation menu with icons and text labels that shrink to icons-only on tablet-sized screens, optimizing space.",
+          "Modern & Clean UI: A minimalist and contemporary design aesthetic that puts the focus on the content, creating a professional and trustworthy impression.",
+          "Comprehensive Component Suite: Includes all the essential sections for a product launch: a compelling hero, feature highlights, detailed descriptions, a video showcase, app statistics, and a clear pricing table.",
+          "Easy Customization: The code is well-structured and uses standard HTML and CSS, making it simple to modify text, images, and color schemes to fit any brand identity.",
+          "Built with Bootstrap 5: Leverages the world's most popular front-end framework for reliability, consistency, and ease of customization."
+        ],
+        "technologies": {
+          "frontend": ["HTML5", "CSS3", "Font Awesome", "Google Fonts"],
+          "deployment": ["githubPages"]
+        },
+        "links": {
+          "live": "https://elsheshtawey1.github.io/TWETER-COLON/",
+          "github": "https://github.com/Elsheshtawey1/TWETER-COLON"
         }
       }
     },
@@ -103,9 +628,9 @@
       "id": "ai-content-generator",
       "title": "AI Content Generator",
       "description": "AI-powered content creation tool for marketing professionals",
-      "image": "/images/ai-content-generator.jpg", 
+      "image": "/images/ai-content-generator.jpg",
       "tags": ["React", "OpenAI", "Python", "FastAPI"],
-      "category": "AI/ML",
+      "category": "backend",
       "status": "in-progress",
       "year": 2024,
       "featured": false,
@@ -113,14 +638,7 @@
         "overview": "Developing an AI-powered content generation tool that helps marketing professionals create high-quality blog posts, social media content, and marketing copy using advanced language models.",
         "challenges": "Fine-tuning AI models for specific content types, managing API costs, and ensuring content quality and originality.",
         "solutions": "Implemented prompt engineering techniques, created content templates, and built a feedback loop for continuous improvement.",
-        "features": [
-          "Multiple content types generation",
-          "Brand voice customization", 
-          "Content optimization suggestions",
-          "Plagiarism detection",
-          "SEO optimization",
-          "Batch content generation"
-        ],
+        "features": ["Multiple content types generation", "Brand voice customization", "Content optimization suggestions", "Plagiarism detection", "SEO optimization", "Batch content generation"],
         "technologies": {
           "frontend": ["React", "TypeScript", "Editor.js"],
           "backend": ["Python", "FastAPI", "OpenAI API", "PostgreSQL"],

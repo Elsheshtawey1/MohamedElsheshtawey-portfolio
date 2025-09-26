@@ -76,39 +76,24 @@ const Projects = ({ data, projects }: ProjectsProps) => {
     <AnimatedSection id="projects" className="py-20 px-6 bg-surface/50">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <m.div 
-          variants={containerVariants}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-20"
-        >
-          <m.h2 
-            variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight"
-          >
+        <m.div variants={containerVariants} initial="initial" whileInView="whileInView" viewport={{ once: true, margin: "-100px" }} className="text-center mb-20">
+          <m.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">
             {data.sections.projects.title}
           </m.h2>
-          <m.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl text-secondary max-w-3xl mx-auto mb-10 leading-relaxed"
-          >
+          <m.p variants={itemVariants} className="text-lg md:text-xl text-secondary max-w-3xl mx-auto mb-10 leading-relaxed">
             {data.sections.projects.subtitle}
           </m.p>
-          <m.div 
-            variants={itemVariants}
-            className="w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow" 
-          />
+          <m.div variants={itemVariants} className="w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow" />
         </m.div>
 
         {/* Filters and View Mode */}
-        <m.div 
+        <m.div
           variants={itemVariants}
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.3 }}
-          className="flex flex-col items-center gap-8 mb-16"
+          className="flex flex-col items-center gap-8 mb-16 md:flex-row md:justify-between"
         >
           {/* Category Filters */}
           <div className="flex flex-wrap justify-center gap-3 md:gap-6 lg:gap-8">
@@ -120,22 +105,16 @@ const Projects = ({ data, projects }: ProjectsProps) => {
                 onClick={() => handleCategoryChange(category)}
                 className={`
                   rounded-full px-6 py-3 text-sm font-medium transition-smooth relative overflow-hidden
-                  ${selectedCategory === category
-                    ? "bg-gradient-primary text-white border-0 shadow-glow"
-                    : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 hover:text-primary-glow hover:shadow-glow bg-surface-elevated/50"
+                  ${
+                    selectedCategory === category
+                      ? "bg-gradient-primary text-white border-0 shadow-glow"
+                      : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 hover:text-primary-glow hover:shadow-glow bg-surface-elevated/50"
                   }
                 `}
               >
                 {category === "all" ? "All Projects" : category}
-                <Badge className={`ml-3 text-xs px-2 py-1 rounded-full ${
-                  selectedCategory === category 
-                    ? "bg-white/20 text-white" 
-                    : "bg-primary/10 text-primary"
-                }`}>
-                  {category === "all" 
-                    ? projects.length 
-                    : projects.filter(p => p.category === category).length
-                  }
+                <Badge className={`ml-3 text-xs px-2 py-1 rounded-full ${selectedCategory === category ? "bg-white/20 text-white" : "bg-primary/10 text-primary"}`}>
+                  {category === "all" ? projects.length : projects.filter((p) => p.category === category).length}
                 </Badge>
               </Button>
             ))}
@@ -148,9 +127,7 @@ const Projects = ({ data, projects }: ProjectsProps) => {
               size="sm"
               onClick={() => setViewMode("grid")}
               className={`rounded-full px-4 py-2 transition-smooth ${
-                viewMode === "grid" 
-                  ? "bg-gradient-primary text-white shadow-glow" 
-                  : "hover:bg-accent/20 text-accent hover:shadow-glow hover:scale-105"
+                viewMode === "grid" ? "bg-gradient-primary text-white shadow-glow" : "hover:bg-accent/20 text-accent hover:shadow-glow hover:scale-105"
               }`}
             >
               <Grid className="w-4 h-4" />
@@ -160,9 +137,7 @@ const Projects = ({ data, projects }: ProjectsProps) => {
               size="sm"
               onClick={() => setViewMode("list")}
               className={`rounded-full px-4 py-2 transition-smooth ${
-                viewMode === "list" 
-                  ? "bg-gradient-primary text-white shadow-glow" 
-                  : "hover:bg-accent/20 text-accent hover:shadow-glow hover:scale-105"
+                viewMode === "list" ? "bg-gradient-primary text-white shadow-glow" : "hover:bg-accent/20 text-accent hover:shadow-glow hover:scale-105"
               }`}
             >
               <List className="w-4 h-4" />
@@ -172,16 +147,12 @@ const Projects = ({ data, projects }: ProjectsProps) => {
 
         {/* Projects Grid/List */}
         {displayedProjects.length > 0 ? (
-          <m.div 
+          <m.div
             variants={containerVariants}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: "-50px" }}
-            className={
-              viewMode === "grid" 
-                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10" 
-                : "space-y-8"
-            }
+            className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10" : "space-y-8"}
           >
             {displayedProjects.map((project, index) => (
               <AnimatedCard key={project.id} index={index}>
@@ -192,35 +163,23 @@ const Projects = ({ data, projects }: ProjectsProps) => {
         ) : (
           <div className="text-center py-16">
             <Filter className="w-16 h-16 text-primary/30 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-primary mb-2">
-              No projects found
-            </h3>
-            <p className="text-secondary">
-              Try selecting a different category or view all projects.
-            </p>
+            <h3 className="text-xl font-semibold text-primary mb-2">No projects found</h3>
+            <p className="text-secondary">Try selecting a different category or view all projects.</p>
           </div>
         )}
 
         {/* Load More Projects Button */}
         {hasMoreProjects && (
-          <m.div 
-            variants={itemVariants}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Button 
+          <m.div variants={itemVariants} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-center mt-16">
+            <Button
               onClick={loadMoreProjects}
-              variant="outline" 
+              variant="outline"
               size="lg"
-              className="group border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-smooth bg-surface-elevated/50 backdrop-blur-sm shadow-card hover:shadow-glow px-8 py-3 text-base font-medium rounded-full"
+              className="group border-primary/30 text-primary hover:bg-primary/25 hover:text-primary-glow hover:border-primary/50 transition-smooth bg-surface-elevated/50 backdrop-blur-sm shadow-card hover:shadow-glow px-8 py-3 text-base font-medium rounded-full"
             >
               <Plus className="mr-3 w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
               Load More Projects
-              <Badge className="ml-3 bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
-                {Math.min(10, sortedProjects.length - displayedCount)} more
-              </Badge>
+              <Badge className="ml-3 bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">{Math.min(10, sortedProjects.length - displayedCount)} more</Badge>
             </Button>
             <p className="text-secondary text-sm mt-4">
               Showing {displayedProjects.length} of {sortedProjects.length} projects
