@@ -1,7 +1,7 @@
 {
-  "name": "محمد الششتاوي - مطور MERN",
+  "name": "Mohamed Elsheshtawey | MERN Stack Developer",
   "short_name": "Mohamed",
-  "description": "بورتفوليو Mohamed Elsheshtawey - MERN Stack Developer",
+  "description": "Mohamed Elsheshtawey - MERN Stack Developer",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "/?source=pwa",
@@ -52,6 +52,13 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
+
 }
