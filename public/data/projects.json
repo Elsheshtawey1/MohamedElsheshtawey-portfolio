@@ -4,7 +4,7 @@
       "id": "ecommerce-platform",
       "title": "E-Commerce Platform",
       "description": "A modern, scalable e-commerce solution built with React and Node.js",
-      "image": "/images/ecommerce-platform.jpg",
+      "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759054069/MohamedElsheshtawey_1_g4kej5.png",
       "tags": ["React", "Node.js", "PostgreSQL", "Stripe"],
       "category": "Full Stack",
       "status": "completed",

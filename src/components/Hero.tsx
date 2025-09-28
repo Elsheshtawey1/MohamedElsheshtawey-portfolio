@@ -80,14 +80,11 @@ const Hero = ({ data }: HeroProps) => {
           <m.h1 variants={itemVariants} transition={{ duration: 0.6 }} className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
             <span className="gradient-text">{data.personal.name}</span>
           </m.h1>
-
+          
           {/* Title with Typing Effect and Shiny Animation */}
           <m.h2 variants={itemVariants} transition={{ duration: 0.6 }} className="text-2xl md:text-4xl lg:text-5xl font-semibold text-primary mb-6">
-            
-              <TypingText text={data.personal.title} speed={80} onComplete={() => setTypingComplete(true)} />
-            
+            <TypingText text={data.personal.title} speed={80} onComplete={() => setTypingComplete(true)} />
           </m.h2>
-
           {/* Subtitle with Shiny Animation */}
           <m.p variants={itemVariants} transition={{ duration: 0.6 }} className="text-md md:text-xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
             <ShinyText shimmerDuration={3} shimmerWidth={80} wordByWord={true} staggerDelay={0.2}>
@@ -109,9 +106,7 @@ const Hero = ({ data }: HeroProps) => {
               asChild
             >
               <a href="/Mohamed_ElsheshtaweCV_Balanced.pdf" download className="flex items-center">
-               
-                  Download My CV
-              
+                Download My CV
               </a>
             </Button>
           </m.div>

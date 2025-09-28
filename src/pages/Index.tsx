@@ -43,7 +43,7 @@ const Index = () => {
         <About data={portfolioData} />
         <section id="skills" className="py-20 px-6 bg-surface">
           <div className="max-w-6xl mx-auto">
-            <Skills skills={portfolioData.sections.about.skills} />
+            <Skills  />
           </div>
         </section>
         <Projects data={portfolioData} projects={projectsData.projects} />
