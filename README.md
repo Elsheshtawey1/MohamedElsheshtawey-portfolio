@@ -60,6 +60,12 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Documentation
+
+Comprehensive API and component documentation is available in the `docs/` directory. Start here:
+
+- [Docs Index](docs/README.md)
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/88efa945-9a22-477d-8e9c-bcc819b1611e) and click on Share -> Publish.
