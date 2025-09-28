@@ -60,6 +60,42 @@
       }
     },
 
+
+{
+  "id": "VSCodeClone",
+  "title": "VS Code Clone",
+  "description": "A web-based clone of the popular Visual Studio Code editor, featuring file explorer, resizable panels, tabbed editor, syntax highlighting, and a welcoming interface.",
+  "image": "/images/vscode-clone.jpg",
+  "tags": ["react", "typescript", "redux", "editor", "responsive"],
+  "category": ["Frontend"],
+  "status": "completed",
+  "year": 2025,
+  "featured": true,
+  "details": {
+    "overview": "VS Code Clone replicates key functionalities of the Visual Studio Code editor in a web-based environment. Users can navigate files, open multiple tabs, resize panels, and view syntax-highlighted code.",
+    "challenges": "Replicating VS Code's complex interface, implementing resizable panels, managing multiple file tabs, ensuring smooth syntax highlighting, and maintaining responsive design.",
+    "solutions": "Used React with TypeScript for scalable and type-safe development, Redux Toolkit for state management, react-resizable-panels for adjustable layouts, react-syntax-highlighter for code highlighting, and Tailwind CSS for responsive styling.",
+    "features": [
+      "File explorer with familiar folder structure.",
+      "Resizable panels to adjust layout.",
+      "Tabbed interface for managing multiple files.",
+      "Syntax highlighting for various programming languages.",
+      "Welcome screen when no files are open.",
+      "Icons for different file types."
+    ],
+    "technologies": {
+      "frontend": ["React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "react-resizable-panels", "react-syntax-highlighter"],
+      "backend": [],
+      "build-tool": ["Vite"]
+    },
+    "links": {
+      "live": "https://vscode-clone-project.vercel.app/",
+      "github": "https://github.com/Elsheshtawey1/vscode-clone-project"
+    }
+  }
+},
+
+
     {
       "id": "ShopEase",
       "title": "ShopEase",
