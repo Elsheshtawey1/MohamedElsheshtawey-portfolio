@@ -20,24 +20,25 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full flex flex-col">
       {/* Project Image */}
       <div className="relative overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-48 object-cover transition-smooth group-hover:scale-105"
-        />
-        
+        <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-smooth group-hover:scale-105" />
+
         {/* Overlay with Quick Actions */}
         <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">
-          {project.details.links.live && (
-            <Button size="sm" variant="outline" className="glass-effect">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Live Demo
+          {project.details.links.github && (
+            <Button asChild size="sm" variant="outline" className="glass-effect">
+              <a href={project.details.links.github} target="_blank" rel="noopener noreferrer">
+                <Github className="w-4 h-4 mr-2" />
+                Code
+              </a>
             </Button>
           )}
-          {project.details.links.github && (
-            <Button size="sm" variant="outline" className="glass-effect">
-              <Github className="w-4 h-4 mr-2" />
-              Code
+
+          {project.details.links.live && (
+            <Button asChild size="sm" variant="outline" className="glass-effect">
+              <a href={project.details.links.live} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Live Demo
+              </a>
             </Button>
           )}
         </div>
@@ -54,9 +55,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
         {/* Status Badge */}
         <div className="absolute top-3 right-3">
-          <Badge className={`border ${statusColors[project.status]} capitalize`}>
-            {project.status.replace('-', ' ')}
-          </Badge>
+          <Badge className={`border ${statusColors[project.status]} capitalize`}>{project.status.replace("-", " ")}</Badge>
         </div>
       </div>
 
@@ -64,9 +63,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         {/* Project Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-2 group-hover:gradient-text transition-smooth">
-              {project.title}
-            </h3>
+            <h3 className="text-xl font-semibold text-primary mb-2 group-hover:gradient-text transition-smooth">{project.title}</h3>
             <div className="flex items-center gap-2 text-sm text-secondary">
               <Calendar className="w-4 h-4" />
               <span>{project.year}</span>
@@ -77,18 +74,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         {/* Description */}
-        <p className="text-secondary mb-6 leading-relaxed line-clamp-3 flex-1">
-          {project.description}
-        </p>
+        <p className="text-secondary mb-6 leading-relaxed line-clamp-3 flex-1">{project.description}</p>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.slice(0, 3).map((tag, index) => (
-            <Badge 
-              key={index} 
-              variant="secondary"
-              className="text-xs bg-primary/10 text-primary border-primary/20"
-            >
+            <Badge key={index} variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
               {tag}
             </Badge>
           ))}

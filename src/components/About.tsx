@@ -56,12 +56,9 @@ const About = ({ data }: AboutProps) => {
           <m.div
             variants={itemVariants}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-elevated border border-primary/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 "
           >
-            <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-secondary">About Me</span>
           </m.div>
-
           <m.h2 variants={itemVariants} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }} className="text-5xl md:text-6xl font-bold text-primary mb-6 gradient-text">
             {data.sections.about.title}
           </m.h2>

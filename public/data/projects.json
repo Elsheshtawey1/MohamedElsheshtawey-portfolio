@@ -1,73 +1,85 @@
 {
   "projects": [
-    {
-      "id": "ecommerce-platform",
-      "title": "E-Commerce Platform",
-      "description": "A modern, scalable e-commerce solution built with React and Node.js",
-      "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759054069/MohamedElsheshtawey_1_g4kej5.png",
-      "tags": ["React", "Node.js", "PostgreSQL", "Stripe"],
-      "category": "Full Stack",
-      "status": "completed",
-      "year": 2024,
-      "featured": true,
-      "details": {
-        "overview": "Built a comprehensive e-commerce platform from scratch featuring user authentication, payment processing, inventory management, and real-time analytics. The platform handles over 10,000 daily transactions.",
-        "challenges": "Implementing secure payment processing, optimizing database queries for large product catalogs, and ensuring mobile responsiveness across all devices.",
-        "solutions": "Utilized Redis for caching, implemented lazy loading for product images, and created a microservices architecture for better scalability.",
-        "features": [
-          "Secure user authentication and authorization",
-          "Real-time inventory tracking",
-          "Stripe payment integration",
-          "Advanced product search and filtering",
-          "Admin dashboard with analytics",
-          "Mobile-responsive design"
-        ],
-        "technologies": {
-          "frontend": ["React", "TypeScript", "Tailwind CSS", "React Query"],
-          "backend": ["Node.js", "Express", "PostgreSQL", "Redis"],
-          "deployment": ["AWS", "Docker", "CI/CD Pipeline"]
-        },
-        "links": {
-          "live": "https://ecommerce-demo.dev",
-          "github": "https://github.com/alexchen/ecommerce-platform"
-        }
-      }
+{
+  "id": "FullStackTodo",
+  "title": "Full-Stack To-Do Application",
+  "description": "A full-stack to-do list application built with Next.js, Prisma, and MongoDB. It provides complete CRUD functionality, secure user authentication, and a responsive, modern UI with light/dark mode support.",
+  "image": "/images/fullstack-todo.jpg",
+  "tags": ["nextjs", "typescript", "prisma", "mongodb", "clerk", "tailwind", "shadcn/ui", "react-hook-form", "zod"],
+  "category": "Full Stack",
+  "status": "completed",
+  "year": 2025,
+  "featured": true,
+  "details": {
+    "overview": "This project is a full-stack to-do application that allows users to create, read, update, and delete tasks. It features a secure authentication system, responsive design, and an API-less architecture using Next.js Server Actions.",
+    "challenges": "Building a seamless API-less CRUD architecture while maintaining type safety and integrating secure authentication with scalable database operations.",
+    "solutions": "Leveraged Next.js Server Actions to handle database mutations without a traditional API layer, implemented Prisma as the ORM for MongoDB, and integrated Clerk for robust user authentication. Tailwind CSS and shadcn/ui were used to create a responsive and modern UI with light/dark theme support.",
+    "features": [
+      "Full CRUD operations for managing to-do items.",
+      "User authentication using Clerk for secure sign-up and sign-in.",
+      "API-less architecture with Next.js Server Actions.",
+      "Responsive UI built with Tailwind CSS and shadcn/ui.",
+      "Light and dark mode theming.",
+      "Database seeding script for mock development data."
+    ],
+    "technologies": {
+      "framework": ["Next.js v15"],
+      "language": ["TypeScript"],
+      "orm": ["Prisma"],
+      "database": ["MongoDB"],
+      "authentication": ["Clerk"],
+      "styling": ["Tailwind CSS", "shadcn/ui"],
+      "form-management": ["React Hook Form"],
+      "validation": ["Zod"],
+      "linting": ["ESLint"]
     },
-    {
-      "id": "task-management-app",
-      "title": "Task Management App",
-      "description": "Collaborative task management application with real-time updates",
-      "image": "/images/task-management-app.jpg",
-      "tags": ["React", "Socket.io", "MongoDB", "Express"],
-      "category": "Full Stack",
-      "status": "completed",
-      "year": 2024,
-      "featured": true,
-      "details": {
-        "overview": "Developed a collaborative task management application that enables teams to organize, track, and complete projects efficiently with real-time synchronization across all devices.",
-        "challenges": "Implementing real-time collaboration features, handling concurrent updates, and creating an intuitive user interface for complex project structures.",
-        "solutions": "Used Socket.io for real-time communication, implemented optimistic updates, and created a flexible component-based architecture.",
-        "features": ["Real-time collaboration", "Drag & drop task management", "Team workspaces", "File attachments", "Due date notifications", "Progress tracking"],
-        "technologies": {
-          "frontend": ["React", "TypeScript", "Material-UI", "Socket.io Client"],
-          "backend": ["Node.js", "Express", "MongoDB", "Socket.io"],
-          "deployment": ["Heroku", "MongoDB Atlas"]
-        },
-        "links": {
-          "live": "https://taskflow-demo.dev",
-          "github": "https://github.com/alexchen/task-management"
-        }
-      }
+    "links": {
+      "live": "https://fullstact-todo.vercel.app/",
+      "github": "https://github.com/Elsheshtawey1/fullstact-todo"
+    }
+  }
+},
+
+{
+  "id": "PersonalPortfolio",
+  "title": "Personal Portfolio Website",
+  "description": "A personal portfolio website showcasing skills, projects, and professional experience. Fully responsive with project showcase, skills section, contact form, and subtle animations.",
+  "image": "/images/portfolio-website.jpg",
+  "tags": ["react", "typescript", "vite", "tailwind", "framer-motion", "shadcn/ui", "responsive"],
+  "category": "Frontend",
+  "status": "completed",
+  "year": 2025,
+  "featured": true,
+  "details": {
+    "overview": "This personal portfolio website serves as a central hub to showcase work, skills, and professional experience. It is fully responsive and includes project showcases, skill highlights, an about me section, and a contact form.",
+    "challenges": "Creating a fully responsive design across all devices, integrating animations without affecting performance, and ensuring an intuitive user experience.",
+    "solutions": "Implemented React with TypeScript for scalable development, Tailwind CSS and shadcn/ui for responsive and modular styling, Framer Motion for smooth animations, and deployed via Vercel for fast performance.",
+    "features": [
+      "Responsive design for mobile, tablet, and desktop.",
+      "Project showcase section with descriptions, tech stack, and links.",
+      "Skills section highlighting technical expertise.",
+      "About Me section introducing background and passion.",
+      "Contact form for direct communication.",
+      "Subtle animations to enhance UX."
+    ],
+    "technologies": {
+      "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+      "backend": [],
+      "build-tool": ["Vercel"]
     },
-
-
+    "links": {
+      "live": "https://mohamed-elsheshtawey-portfolio.vercel.app/",
+      "github": "https://github.com/Elsheshtawey1/MohamedElsheshtawey-portfolio"
+    }
+  }
+},
 {
   "id": "VSCodeClone",
   "title": "VS Code Clone",
   "description": "A web-based clone of the popular Visual Studio Code editor, featuring file explorer, resizable panels, tabbed editor, syntax highlighting, and a welcoming interface.",
   "image": "/images/vscode-clone.jpg",
   "tags": ["react", "typescript", "redux", "editor", "responsive"],
-  "category": ["Frontend"],
+  "category": "Frontend",
   "status": "completed",
   "year": 2025,
   "featured": true,
@@ -94,8 +106,6 @@
     }
   }
 },
-
-
     {
       "id": "ShopEase",
       "title": "ShopEase",
@@ -168,7 +178,6 @@
         }
       }
     },
-
     {
       "id": "CRUD Product Management",
       "title": "CRUD Product Management",
@@ -203,7 +212,6 @@
         }
       }
     },
-
     {
       "id": "Restaurant Website",
       "title": "Restaurant Website",
@@ -236,9 +244,8 @@
         }
       }
     },
-
     {
-      "id": "Personal Portfolio Website",
+      "id": "Portfolio template",
       "title": "Personal Portfolio Website",
       "description": "A modern, single-page personal portfolio website built with React to showcase your work, skills, services, and provide an easy way for clients to get in touch.",
       "image": "/images/personal-portfolio.jpg",
@@ -268,7 +275,6 @@
         }
       }
     },
-
     {
       "id": "PixelPerfect",
       "title": "PixelPerfect Website",
@@ -301,7 +307,6 @@
         }
       }
     },
-
     {
       "id": "Alert Component",
       "title": "React Alert Component",
@@ -333,7 +338,6 @@
         }
       }
     },
-
     {
       "id": "Food Lover Restaurant",
       "title": "Food Lover Restaurant Website",
@@ -668,8 +672,7 @@
       "tags": ["React", "OpenAI", "Python", "FastAPI"],
       "category": "backend",
       "status": "in-progress",
-      "year": 2024,
-      "featured": false,
+      "year": 2020,
       "details": {
         "overview": "Developing an AI-powered content generation tool that helps marketing professionals create high-quality blog posts, social media content, and marketing copy using advanced language models.",
         "challenges": "Fine-tuning AI models for specific content types, managing API costs, and ensuring content quality and originality.",
