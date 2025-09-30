@@ -17,10 +17,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   };
 
   return (
-    <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full flex flex-col">
+    <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full  flex flex-col">
       {/* Project Image */}
       <div className="relative overflow-hidden">
-        <img src={project.image} alt={project.title} className="w-full transition-smooth group-hover:scale-105" />
+        <img src={project.image} alt={project.title} className="w-full flex justify-center object-cover transition-smooth group-hover:scale-105" />
 
         {/* Overlay with Quick Actions */}
         <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">

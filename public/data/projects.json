@@ -44,7 +44,7 @@
   "id": "PersonalPortfolio",
   "title": "Personal Portfolio Website",
   "description": "A personal portfolio website showcasing skills, projects, and professional experience. Fully responsive with project showcase, skills section, contact form, and subtle animations.",
-  "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759225282/FINALI-MOHAMED_au3bvz.png",
+  "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268777/FINALI-MOHAMED_bvtlo1.png",
   "tags": ["react", "typescript", "vite", "tailwind", "framer-motion", "shadcn/ui", "responsive"],
   "category": "Frontend",
   "status": "completed",
