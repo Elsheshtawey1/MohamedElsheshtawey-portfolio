@@ -11,16 +11,16 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const statusColors = {
-    completed: "bg-green-500/20 text-green-400 border-green-500/30",
-    "in-progress": "bg-blue-500/20 text-blue-400 border-blue-500/30",
-    planning: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+    completed: "bg-green-500/20 text-green-500  border-green-700/30",
+    onprogress: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+    planning: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
   };
 
   return (
     <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full flex flex-col">
       {/* Project Image */}
       <div className="relative overflow-hidden">
-        <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-smooth group-hover:scale-105" />
+        <img src={project.image} alt={project.title} className="w-full transition-smooth group-hover:scale-105" />
 
         {/* Overlay with Quick Actions */}
         <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">
