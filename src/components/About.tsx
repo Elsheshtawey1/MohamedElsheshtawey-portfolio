@@ -45,7 +45,7 @@ const About = ({ data }: AboutProps) => {
   };
 
   return (
-    <AnimatedSection id="about" className="py-24 px-6 relative overflow-hidden">
+    <AnimatedSection id="about" className="py-24 px-3 relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-primary rounded-full opacity-5 blur-3xl animate-float" />
       <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-secondary rounded-full opacity-5 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
