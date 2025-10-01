@@ -105,7 +105,7 @@ const Hero = ({ data }: HeroProps) => {
               className="border-primary/30 text-primary hover:bg-white hover:text-black hover:border-white transition-smooth text-lg px-8 py-6 glass-effect hover:shadow-glow"
               asChild
             >
-              <a href="/Mohamed_ElsheshtaweCV_Balanced.pdf" download className="flex items-center">
+              <a href="/FRONTEND-Mohamed_Elsheshtawey.pdf" download className="flex items-center">
                 Download My CV
               </a>
             </Button>
