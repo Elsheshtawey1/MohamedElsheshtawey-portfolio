@@ -23,7 +23,7 @@ interface ProjectsProps {
 const Projects = ({ data, projects }: ProjectsProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [displayedCount, setDisplayedCount] = useState<number>(10);
+  const [displayedCount, setDisplayedCount] = useState<number>(6);
 
   // Get unique categories
   const categories = ["all", ...new Set(projects.map(project => project.category))];

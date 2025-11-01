@@ -24,10 +24,6 @@
         "secondary": "Get In Touch"
       }
     },
-    "about": {
-      "title": "About Me",
-      "description": "My name is Mohamed Elsheshtawey, and I’m a self-taught MERN Stack developer. I initially studied law, but my passion for coding led me to teach myself web development from the ground up. Over the years, I’ve worked on multiple freelance projects, focusing on building applications that are not only visually appealing but also functional and impactful. My expertise lies in MongoDB, Express, React, and Node.js, and I leverage modern tools and practices to ensure smooth, scalable, and maintainable solutions. I thrive on problem-solving and continuously learning, and I love helping clients turn their ideas into real, working products."
-    },
     "projects": {
       "title": "Featured Projects",
       "subtitle": "A showcase of my recent work and technical achievements"
