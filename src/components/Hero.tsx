@@ -1,179 +1,156 @@
-import { memo, useState } from "react";
-import { m } from "framer-motion";
+import { memo, useState, useMemo } from "react";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { TypingText } from "@/components/animations/TypingText";
-import { ShinyText } from "@/components/animations/ShinyText";
 import heroBackground from "@/assets/hero-background.webp";
 
 interface HeroProps {
   data: {
-    personal: {
-      name: string;
-      title: string;
-      subtitle: string;
-    };
+    personal: { name: string; title: string; subtitle: string };
     sections: {
       hero: {
         greeting: string;
-        cta: {
-          primary: string;
-          secondary: string;
-        };
+        cta: { primary: string; secondary: string };
       };
     };
   };
 }
 
 const Hero = ({ data }: HeroProps) => {
+  // Controls when the subtitle appears (after typing animation finishes)
   const [typingComplete, setTypingComplete] = useState(false);
-  
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  const containerVariants = {
-    initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+  // Framer Motion animation variants (memoized to prevent re-renders)
+  const itemVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 },
+    }),
+    []
+  );
 
-  const itemVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { 
-      opacity: 1, 
-      y: 0
-    }
+  // Smooth scroll function to navigate to other sections
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }} />
+    // === Hero Section ===
+    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black text-center">
+      {/* === Background Image ===
+          Using a static <img> instead of background-image improves LCP (Largest Contentful Paint)
+          'fetchPriority' + 'loading=eager' ensures it loads as early as possible.
+          Slight blur and scale create a cinematic look. */}
+      <img
+        src={heroBackground}
+        alt="Hero background"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        style={{ filter: "blur(0.5px)", transform: "scale(1.01)" }}
+      />
+
+      {/* Gradient overlay for readability and mood */}
       <div className="absolute inset-0 bg-gradient-hero opacity-90" />
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full opacity-20 animate-float blur-xl" />
-      <div className="absolute bottom-32 right-20 w-24 h-24 bg-gradient-secondary rounded-full opacity-30 animate-float blur-xl" style={{ animationDelay: "2s" }} />
+      {/* Floating blurred decorative elements for soft motion background */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full opacity-20 blur-xl animate-float" />
+      <div className="absolute bottom-32 right-20 w-24 h-24 bg-gradient-secondary rounded-full opacity-30 blur-xl animate-float" style={{ animationDelay: "1.5s" }} />
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <m.div variants={containerVariants} initial="initial" animate="animate">
-          {/* Greeting */}
-          <m.p variants={itemVariants} transition={{ duration: 0.6 }} className="text-lg md:text-xl text-secondary mb-4 font-medium">
+      {/* LazyMotion loads animation features on demand to reduce bundle size */}
+      <LazyMotion features={domAnimation}>
+        <m.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.1 }} className="relative z-10 mx-auto max-w-6xl px-6">
+          {/* === Greeting text (e.g., "Hello, I'm") === */}
+          <m.p variants={itemVariants} transition={{ duration: 0.3 }} className="mb-4 text-lg md:text-xl text-secondary font-medium">
             {data.sections.hero.greeting}
           </m.p>
 
-          {/* Name with Gradient */}
-          <m.h1 variants={itemVariants} transition={{ duration: 0.6 }} className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-            <span className="gradient-text">{data.personal.name}</span>
-          </m.h1>
-          
-          {/* Title with Typing Effect and Shiny Animation */}
-          <m.h2 variants={itemVariants} transition={{ duration: 0.6 }} className="text-2xl md:text-4xl lg:text-5xl font-semibold text-primary mb-6">
-            <TypingText text={data.personal.title} speed={80} onComplete={() => setTypingComplete(true)} />
-          </m.h2>
-          {/* Subtitle with Shiny Animation */}
-          <m.p variants={itemVariants} transition={{ duration: 0.6 }} className="text-md md:text-xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
-            <ShinyText shimmerDuration={3} shimmerWidth={80} wordByWord={true} staggerDelay={0.2}>
-              {data.personal.subtitle}
-            </ShinyText>
-          </m.p>
+          {/* === Name with static gradient text ===
+              No shiny or animation effects to improve performance and LCP. */}
+          <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-600">
+            {data.personal.name}
+          </h1>
 
-          {/* CTA Buttons */}
-          <m.div variants={itemVariants} transition={{ duration: 0.6 }} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-6 hover-glow" onClick={() => scrollToSection("projects")}>
+          {/* === Job title with typing effect === */}
+          <m.h2 variants={itemVariants} transition={{ duration: 0.4 }} className="mb-6 text-2xl md:text-3xl lg:text-4xl font-semibold text-primary">
+            <TypingText text={data.personal.title} speed={60} onComplete={() => setTypingComplete(true)} />
+          </m.h2>
+
+          {/* === Subtitle (only shown after typing animation finishes) === */}
+          {typingComplete && (
+            <m.p variants={itemVariants} transition={{ duration: 0.4 }} className="mb-10 text-md md:text-lg text-secondary max-w-3xl mx-auto leading-relaxed">
+              {data.personal.subtitle}
+            </m.p>
+          )}
+
+          {/* === Call-to-Action Buttons === */}
+          <m.div variants={itemVariants} transition={{ duration: 0.4 }} className="mb-16 flex flex-col sm:flex-row justify-center gap-4">
+            {/* Primary CTA: Scroll to projects */}
+            <Button size="lg" className="bg-gradient-primary hover:shadow-glow text-lg px-8 py-6 transition-smooth" onClick={() => scrollToSection("projects")}>
               {data.sections.hero.cta.primary}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary/30 text-primary hover:bg-white hover:text-black hover:border-white transition-smooth text-lg px-8 py-6 glass-effect hover:shadow-glow"
-              asChild
-            >
-              <a href="/FRONTEND-Mohamed_Elsheshtawey.pdf" download className="flex items-center">
-                Download My CV
+            {/* Secondary CTA: Download CV */}
+            <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-white hover:text-black hover:border-white glass-effect transition-smooth text-lg px-8 py-6" asChild>
+              <a href="/FRONTEND-Mohamed_Elsheshtawey.pdf" download>
+                {data.sections.hero.cta.secondary}
               </a>
             </Button>
           </m.div>
 
-          {/* Social Links */}
-          <m.div variants={itemVariants} transition={{ duration: 0.6 }}>
+          {/* === Social Links with Tooltips === */}
+          <m.div variants={itemVariants} transition={{ duration: 0.3 }}>
             <TooltipProvider>
               <div className="flex justify-center gap-6">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a href="https://github.com/Elsheshtawey1" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-smooth hover-glow">
-                      <Github className="w-6 h-6 text-primary" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>View my GitHub profile</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href="https://www.linkedin.com/in/mohamed-elsheshtawey/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-smooth hover-glow"
-                    >
-                      <Linkedin className="w-6 h-6 text-primary" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connect on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a href="mailto:mohamedelsheshtawey1@gmail.com" className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-smooth hover-glow">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Send me an email</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a href="https://wa.me/201201585814" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-smooth hover-glow">
-                      <MessageCircle className="w-6 h-6 text-primary" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Chat on WhatsApp</p>
-                  </TooltipContent>
-                </Tooltip>
+                {[
+                  {
+                    icon: <Github className="w-6 h-6 text-primary" />,
+                    href: "https://github.com/Elsheshtawey1",
+                    label: "View my GitHub profile",
+                  },
+                  {
+                    icon: <Linkedin className="w-6 h-6 text-primary" />,
+                    href: "https://www.linkedin.com/in/mohamed-elsheshtawey/",
+                    label: "Connect on LinkedIn",
+                  },
+                  {
+                    icon: <Mail className="w-6 h-6 text-primary" />,
+                    href: "mailto:mohamedelsheshtawey1@gmail.com",
+                    label: "Send me an email",
+                  },
+                  {
+                    icon: <MessageCircle className="w-6 h-6 text-primary" />,
+                    href: "https://wa.me/201201585814",
+                    label: "Chat on WhatsApp",
+                  },
+                ].map((link, idx) => (
+                  <Tooltip key={idx}>
+                    <TooltipTrigger asChild>
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full glass-effect hover:bg-primary/20 hover-glow transition-smooth" aria-label={link.label}>
+                        {link.icon}
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>{link.label}</TooltipContent>
+                  </Tooltip>
+                ))}
               </div>
             </TooltipProvider>
           </m.div>
         </m.div>
-      </div>
+      </LazyMotion>
 
-      {/* Interactive Scroll Indicator */}
+      {/* === Scroll Indicator ===
+          Simple bounce animation to hint users to scroll down. */}
       <button
         onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-smooth group"
         aria-label="Scroll to next section"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce cursor-pointer hover:scale-110 transition-smooth group"
       >
         <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center group-hover:border-primary transition-smooth">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse group-hover:bg-primary-glow transition-smooth" />
@@ -183,4 +160,4 @@ const Hero = ({ data }: HeroProps) => {
   );
 };
 
-export default memo(Hero); 
+export default memo(Hero);
