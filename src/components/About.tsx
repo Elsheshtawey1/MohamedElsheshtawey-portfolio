@@ -5,21 +5,7 @@ import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { AnimatedCard } from "@/components/animations/AnimatedCard";
 import { memo } from "react";
 
-interface AboutProps {
-  data: {
-    personal: {
-      bio: string;
-    };
-    sections: {
-      about: {
-        title: string;
-        description: string;
-      };
-    };
-  };
-}
-
-const About = ({ data }: AboutProps) => {
+const About = () => {
   const stats = [
     { icon: Code2, label: "Years Experience", value: "1+", color: "from-blue-500 to-cyan-500" },
     { icon: Target, label: "Projects Completed", value: "20+", color: "from-emerald-500 to-teal-500" },
@@ -56,7 +42,7 @@ const About = ({ data }: AboutProps) => {
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 gradient-text leading-snug"
           >
-            {data.sections.about.title}
+            About Me
           </m.h2>
 
           <m.div variants={itemVariants} transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }} className="w-20 sm:w-28 md:w-32 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow" />
