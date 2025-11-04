@@ -1,111 +1,110 @@
 {
   "projects": [
-{
-  "id": "FullStackTodo",
-  "title": "Full-Stack To-Do Application",
-  "description": "A full-stack to-do list application built with Next.js, Prisma, and MongoDB. It provides complete CRUD functionality, secure user authentication, and a responsive, modern UI with light/dark mode support.",
-  "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268778/todo_png_nhtzcx.png",
-  "tags": ["nextjs", "typescript", "prisma", "mongodb", "clerk", "tailwind", "shadcn/ui", "react-hook-form", "zod"],
-  "category": "Full Stack",
-  "status": "completed",
-  "year": 2025,
-  "featured": true,
-  "details": {
-    "overview": "This project is a full-stack to-do application that allows users to create, read, update, and delete tasks. It features a secure authentication system, responsive design, and an API-less architecture using Next.js Server Actions.",
-    "challenges": "Building a seamless API-less CRUD architecture while maintaining type safety and integrating secure authentication with scalable database operations.",
-    "solutions": "Leveraged Next.js Server Actions to handle database mutations without a traditional API layer, implemented Prisma as the ORM for MongoDB, and integrated Clerk for robust user authentication. Tailwind CSS and shadcn/ui were used to create a responsive and modern UI with light/dark theme support.",
-    "features": [
-      "Full CRUD operations for managing to-do items.",
-      "User authentication using Clerk for secure sign-up and sign-in.",
-      "API-less architecture with Next.js Server Actions.",
-      "Responsive UI built with Tailwind CSS and shadcn/ui.",
-      "Light and dark mode theming.",
-      "Database seeding script for mock development data."
-    ],
-    "technologies": {
-      "framework": ["Next.js v15"],
-      "language": ["TypeScript"],
-      "orm": ["Prisma"],
-      "database": ["MongoDB"],
-      "authentication": ["Clerk"],
-      "styling": ["Tailwind CSS", "shadcn/ui"],
-      "form-management": ["React Hook Form"],
-      "validation": ["Zod"],
-      "linting": ["ESLint"]
+    {
+      "id": "FullStackTodo",
+      "title": "Full-Stack To-Do Application",
+      "description": "A full-stack to-do list application built with Next.js, Prisma, and MongoDB. It provides complete CRUD functionality, secure user authentication, and a responsive, modern UI with light/dark mode support.",
+      "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268778/todo_png_nhtzcx.png",
+      "tags": ["nextjs", "typescript", "prisma", "mongodb", "clerk", "tailwind", "shadcn/ui", "react-hook-form", "zod"],
+      "category": "Full Stack",
+      "status": "completed",
+      "year": 2025,
+      "featured": true,
+      "details": {
+        "overview": "This project is a full-stack to-do application that allows users to create, read, update, and delete tasks. It features a secure authentication system, responsive design, and an API-less architecture using Next.js Server Actions.",
+        "challenges": "Building a seamless API-less CRUD architecture while maintaining type safety and integrating secure authentication with scalable database operations.",
+        "solutions": "Leveraged Next.js Server Actions to handle database mutations without a traditional API layer, implemented Prisma as the ORM for MongoDB, and integrated Clerk for robust user authentication. Tailwind CSS and shadcn/ui were used to create a responsive and modern UI with light/dark theme support.",
+        "features": [
+          "Full CRUD operations for managing to-do items.",
+          "User authentication using Clerk for secure sign-up and sign-in.",
+          "API-less architecture with Next.js Server Actions.",
+          "Responsive UI built with Tailwind CSS and shadcn/ui.",
+          "Light and dark mode theming.",
+          "Database seeding script for mock development data."
+        ],
+        "technologies": {
+          "framework": ["Next.js v15"],
+          "language": ["TypeScript"],
+          "orm": ["Prisma"],
+          "database": ["MongoDB"],
+          "authentication": ["Clerk"],
+          "styling": ["Tailwind CSS", "shadcn/ui"],
+          "form-management": ["React Hook Form"],
+          "validation": ["Zod"],
+          "linting": ["ESLint"]
+        },
+        "links": {
+          "live": "https://fullstact-todo.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/fullstact-todo"
+        }
+      }
     },
-    "links": {
-      "live": "https://fullstact-todo.vercel.app/",
-      "github": "https://github.com/Elsheshtawey1/fullstact-todo"
-    }
-  }
-},
-
-{
-  "id": "PersonalPortfolio",
-  "title": "Personal Portfolio Website",
-  "description": "A personal portfolio website showcasing skills, projects, and professional experience. Fully responsive with project showcase, skills section, contact form, and subtle animations.",
-  "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268777/FINALI-MOHAMED_bvtlo1.png",
-  "tags": ["react", "typescript", "vite", "tailwind", "framer-motion", "shadcn/ui", "responsive"],
-  "category": "Frontend",
-  "status": "completed",
-  "year": 2025,
-  "featured": true,
-  "details": {
-    "overview": "This personal portfolio website serves as a central hub to showcase work, skills, and professional experience. It is fully responsive and includes project showcases, skill highlights, an about me section, and a contact form.",
-    "challenges": "Creating a fully responsive design across all devices, integrating animations without affecting performance, and ensuring an intuitive user experience.",
-    "solutions": "Implemented React with TypeScript for scalable development, Tailwind CSS and shadcn/ui for responsive and modular styling, Framer Motion for smooth animations, and deployed via Vercel for fast performance.",
-    "features": [
-      "Responsive design for mobile, tablet, and desktop.",
-      "Project showcase section with descriptions, tech stack, and links.",
-      "Skills section highlighting technical expertise.",
-      "About Me section introducing background and passion.",
-      "Contact form for direct communication.",
-      "Subtle animations to enhance UX."
-    ],
-    "technologies": {
-      "frontend": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
-      "backend": [],
-      "build-tool": ["Vercel"]
+    {
+      "id": "PersonalPortfolio",
+      "title": "Personal Portfolio Website",
+      "description": "A personal portfolio website showcasing skills, projects, and professional experience. Fully responsive with project showcase, skills section, contact form, and subtle animations.",
+      "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268777/FINALI-MOHAMED_bvtlo1.png",
+      "tags": ["react", "typescript", "vite", "tailwind", "framer-motion", "shadcn/ui", "responsive"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2025,
+      "featured": true,
+      "details": {
+        "overview": "This personal portfolio website serves as a central hub to showcase work, skills, and professional experience. It is fully responsive and includes project showcases, skill highlights, an about me section, and a contact form.",
+        "challenges": "Creating a fully responsive design across all devices, integrating animations without affecting performance, and ensuring an intuitive user experience.",
+        "solutions": "Implemented React with TypeScript for scalable development, Tailwind CSS and shadcn/ui for responsive and modular styling, Framer Motion for smooth animations, and deployed via Vercel for fast performance.",
+        "features": [
+          "Responsive design for mobile, tablet, and desktop.",
+          "Project showcase section with descriptions, tech stack, and links.",
+          "Skills section highlighting technical expertise.",
+          "About Me section introducing background and passion.",
+          "Contact form for direct communication.",
+          "Subtle animations to enhance UX."
+        ],
+        "technologies": {
+          "framework": ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+          "backend": [],
+          "build-tool": ["Vercel"]
+        },
+        "links": {
+          "live": "https://mohamed-elsheshtawey-portfolio.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/MohamedElsheshtawey-portfolio"
+        }
+      }
     },
-    "links": {
-      "live": "https://mohamed-elsheshtawey-portfolio.vercel.app/",
-      "github": "https://github.com/Elsheshtawey1/MohamedElsheshtawey-portfolio"
-    }
-  }
-},
-{
-  "id": "VSCodeClone",
-  "title": "VS Code Clone",
-  "description": "A web-based clone of the popular Visual Studio Code editor, featuring file explorer, resizable panels, tabbed editor, syntax highlighting, and a welcoming interface.",
-  "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268769/Section_1_1_puoofc.png",
-  "tags": ["react", "typescript", "redux", "editor", "responsive"],
-  "category": "Frontend",
-  "status": "completed",
-  "year": 2025,
-  "featured": true,
-  "details": {
-    "overview": "VS Code Clone replicates key functionalities of the Visual Studio Code editor in a web-based environment. Users can navigate files, open multiple tabs, resize panels, and view syntax-highlighted code.",
-    "challenges": "Replicating VS Code's complex interface, implementing resizable panels, managing multiple file tabs, ensuring smooth syntax highlighting, and maintaining responsive design.",
-    "solutions": "Used React with TypeScript for scalable and type-safe development, Redux Toolkit for state management, react-resizable-panels for adjustable layouts, react-syntax-highlighter for code highlighting, and Tailwind CSS for responsive styling.",
-    "features": [
-      "File explorer with familiar folder structure.",
-      "Resizable panels to adjust layout.",
-      "Tabbed interface for managing multiple files.",
-      "Syntax highlighting for various programming languages.",
-      "Welcome screen when no files are open.",
-      "Icons for different file types."
-    ],
-    "technologies": {
-      "frontend": ["React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "react-resizable-panels", "react-syntax-highlighter"],
-      "backend": [],
-      "build-tool": ["Vite"]
+    {
+      "id": "VSCodeClone",
+      "title": "VS Code Clone",
+      "description": "A web-based clone of the popular Visual Studio Code editor, featuring file explorer, resizable panels, tabbed editor, syntax highlighting, and a welcoming interface.",
+      "image": "https://res.cloudinary.com/dhmff2obd/image/upload/v1759268769/Section_1_1_puoofc.png",
+      "tags": ["react", "typescript", "redux", "editor", "responsive"],
+      "category": "Frontend",
+      "status": "completed",
+      "year": 2025,
+      "featured": true,
+      "details": {
+        "overview": "VS Code Clone replicates key functionalities of the Visual Studio Code editor in a web-based environment. Users can navigate files, open multiple tabs, resize panels, and view syntax-highlighted code.",
+        "challenges": "Replicating VS Code's complex interface, implementing resizable panels, managing multiple file tabs, ensuring smooth syntax highlighting, and maintaining responsive design.",
+        "solutions": "Used React with TypeScript for scalable and type-safe development, Redux Toolkit for state management, react-resizable-panels for adjustable layouts, react-syntax-highlighter for code highlighting, and Tailwind CSS for responsive styling.",
+        "features": [
+          "File explorer with familiar folder structure.",
+          "Resizable panels to adjust layout.",
+          "Tabbed interface for managing multiple files.",
+          "Syntax highlighting for various programming languages.",
+          "Welcome screen when no files are open.",
+          "Icons for different file types."
+        ],
+        "technologies": {
+          "frontend": ["React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "react-resizable-panels", "react-syntax-highlighter"],
+          "backend": [],
+          "build-tool": ["Vite"]
+        },
+        "links": {
+          "live": "https://vscode-clone-project.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/vscode-clone-project"
+        }
+      }
     },
-    "links": {
-      "live": "https://vscode-clone-project.vercel.app/",
-      "github": "https://github.com/Elsheshtawey1/vscode-clone-project"
-    }
-  }
-},
     {
       "id": "ShopEase",
       "title": "ShopEase",
@@ -143,7 +142,6 @@
         }
       }
     },
-
     {
       "id": "EconomyAuthApp",
       "title": "Economy Auth App",
@@ -348,25 +346,25 @@
       "status": "completed",
       "year": 2023,
       "details": {
-        "overview": "Food Lover is a modern, responsive website designed to present the offerings of a contemporary restaurant. Built with HTML5, CSS3, and JavaScript, it highlights the restaurant's menu, special promotions, and gallery in an engaging and user-friendly layout.",
-        "challenges": "Ensuring a fully responsive design across desktops, tablets, and mobile devices, while maintaining intuitive navigation and visually appealing content.",
-        "solutions": "Implemented a responsive layout, interactive menu and gallery sections, smooth scrolling navigation, and easy-to-access contact options for a seamless user experience.",
+        "overview": "This Restaurant Website is a modern and responsive single-page application built with React. It provides an engaging online presence for customers to explore the restaurant's offerings, meet the chefs, read testimonials, and contact the restaurant seamlessly across all devices.",
+        "challenges": "Creating a smooth and visually appealing SPA with responsive design, interactive animations, and efficient navigation across multiple sections.",
+        "solutions": "Used React for component-based architecture, React Router DOM for routing, Framer Motion and Swiper for animations, @emotion/react for styling, and other modern libraries to enhance user experience.",
         "features": [
-          "Fully Responsive Design: Provides a consistent and polished layout across all devices.",
-          "Navigation Bar with Smooth Scrolling: Easy access to different sections of the website.",
-          "Interactive Menu Section: Organized display of dishes with pricing details.",
-          "Image Gallery: Showcases the restaurant's food and ambiance in an attractive manner.",
-          "Special Offers Section: Highlights current promotions and deals.",
-          "Functional Contact Form: Allows users to send messages directly to the restaurant.",
-          "Click-to-Call/Email Links: Quick access to phone and email communication."
+          "Home Page with Hero Section, Special Dishes Showcase, Chefs Introduction, Testimonials, and Newsletter Subscription.",
+          "About Us Page detailing restaurant's history, philosophy, and values.",
+          "Contact Us Page with contact form, location, and contact details.",
+          "Responsive Design for desktops, tablets, and mobile devices.",
+          "Smooth Navigation with an intuitive navbar.",
+          "Dynamic Animations and Transitions for modern feel."
         ],
         "technologies": {
-          "frontend": ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
-          "deployment": ["GitHub Pages"]
+          "frontend": ["React.js", "React Router DOM", "Framer Motion", "React Icons", "React Spinners", "React Helmet", "JavaScript (JSX)"],
+          "build-tool": ["Vite"],
+          "linting": ["ESLint"]
         },
         "links": {
-          "live": "https://elsheshtawey1.github.io/FOOD-LOVER/",
-          "github": "https://github.com/Elsheshtawey1/FOOD-LOVER"
+          "live": "https://restaurant-website-plum-delta.vercel.app/",
+          "github": "https://github.com/Elsheshtawey1/restaurant-website"
         }
       }
     },

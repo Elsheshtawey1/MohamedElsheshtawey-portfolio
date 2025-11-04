@@ -20,7 +20,24 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full  flex flex-col">
       {/* Project Image */}
       <div className="relative overflow-hidden">
-        <img src={project.image} alt={project.title} className="w-full flex justify-center object-cover transition-smooth group-hover:scale-105" />
+        <picture>
+          <source
+            srcSet={`
+      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_400,c_scale/")} 400w,
+      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_800,c_scale/")} 800w,
+      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_1200,c_scale/")} 1200w
+    `}
+            sizes="(max-width: 600px) 400px, (max-width: 1024px) 800px, 1200px"
+            type="image/webp" 
+          />
+          <img
+            
+            src={project.image.replace("/upload/", "/upload/f_auto,q_auto,w_800,c_scale/")}
+            alt={project.title}
+            loading="lazy" 
+            className="w-full h-auto object-cover flex justify-center transition-smooth group-hover:scale-105"
+          />
+        </picture>
 
         {/* Overlay with Quick Actions */}
         <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">
