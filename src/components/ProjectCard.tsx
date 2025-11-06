@@ -9,58 +9,60 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
-  const statusColors = {
-    completed: "bg-green-500/20 text-green-500  border-green-700/30",
-    onprogress: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-    planning: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-  };
+const STATUS_COLORS = {
+  completed: "bg-green-500/20 text-green-500 border-green-700/30",
+  onprogress: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  planning: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+};
 
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full  flex flex-col">
-      {/* Project Image */}
-      <div className="relative overflow-hidden">
+    <Card className="group bg-surface-elevated border-primary/20 hover:border-primary/40 transition-smooth overflow-hidden hover-glow h-full flex flex-col">
+      {/* 🖼️ Project Image */}
+      <div className="relative overflow-hidden aspect-[16/9]">
         <picture>
           <source
             srcSet={`
-      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_400,c_scale/")} 400w,
-      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_800,c_scale/")} 800w,
-      ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_1200,c_scale/")} 1200w
-    `}
+              ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_400,c_scale/")} 400w,
+              ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_800,c_scale/")} 800w,
+              ${project.image.replace("/upload/", "/upload/f_auto,q_auto,w_1200,c_scale/")} 1200w
+            `}
             sizes="(max-width: 600px) 400px, (max-width: 1024px) 800px, 1200px"
-            type="image/webp" 
+            type="image/webp"
           />
           <img
-            
             src={project.image.replace("/upload/", "/upload/f_auto,q_auto,w_800,c_scale/")}
             alt={project.title}
-            loading="lazy" 
-            className="w-full h-auto object-cover flex justify-center transition-smooth group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover transition-smooth group-hover:scale-105"
           />
         </picture>
 
-        {/* Overlay with Quick Actions */}
-        <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">
-          {project.details.links.github && (
-            <Button asChild size="sm" variant="outline" className="glass-effect">
-              <a href={project.details.links.github} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-2" />
-                Code
-              </a>
-            </Button>
-          )}
+        {/* 🌈 Overlay (conditional render) */}
+        {(project.details.links.github || project.details.links.live) && (
+          <div className="absolute inset-0 bg-gradient-hero/80 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center gap-3">
+            {project.details.links.github && (
+              <Button asChild size="sm" variant="outline" className="glass-effect" aria-label={`View ${project.title} source code on GitHub`}>
+                <a href={project.details.links.github} target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+                  <Github className="w-4 h-4 mr-2" />
+                  Code
+                </a>
+              </Button>
+            )}
 
-          {project.details.links.live && (
-            <Button asChild size="sm" variant="outline" className="glass-effect">
-              <a href={project.details.links.live} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
-              </a>
-            </Button>
-          )}
-        </div>
+            {project.details.links.live && (
+              <Button asChild size="sm" variant="outline" className="glass-effect" aria-label={`Open live demo for ${project.title}`}>
+                <a href={project.details.links.live} target="_blank" rel="noopener noreferrer" title="View Live Demo">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Live Demo
+                </a>
+              </Button>
+            )}
+          </div>
+        )}
 
-        {/* Featured Badge */}
+        {/* ⭐ Featured Badge */}
         {project.featured && (
           <div className="absolute top-3 left-3">
             <Badge className="bg-gradient-primary text-white border-0">
@@ -70,30 +72,32 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         )}
 
-        {/* Status Badge */}
+        {/* 📊 Status Badge */}
         <div className="absolute top-3 right-3">
-          <Badge className={`border ${statusColors[project.status]} capitalize`}>{project.status.replace("-", " ")}</Badge>
+          <Badge className={`border ${STATUS_COLORS[project.status]} capitalize`}>{project.status.replace("-", " ")}</Badge>
         </div>
       </div>
 
       <CardContent className="p-6 flex-1 flex flex-col">
-        {/* Project Header */}
+        {/* 🔖 Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-xl font-semibold text-primary mb-2 group-hover:gradient-text transition-smooth">{project.title}</h3>
             <div className="flex items-center gap-2 text-sm text-secondary">
               <Calendar className="w-4 h-4" />
               <span>{project.year}</span>
-              <span>•</span>
+              <span role="separator" aria-hidden="true">
+                •
+              </span>
               <span className="text-accent">{project.category}</span>
             </div>
           </div>
         </div>
 
-        {/* Description */}
+        {/* 📝 Description */}
         <p className="text-secondary mb-6 leading-relaxed line-clamp-3 flex-1">{project.description}</p>
 
-        {/* Tech Stack */}
+        {/* 🧠 Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.slice(0, 3).map((tag, index) => (
             <Badge key={index} variant="secondary" className="text-xs bg-primary/10 text-primary border-primary/20">
@@ -107,13 +111,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           )}
         </div>
 
-        {/* View Details Button */}
-        <Link to={`/project/${project.id}`} className="mt-auto">
-          <Button className="w-full bg-gradient-primary hover:shadow-glow transition-smooth group">
+        {/* 🔗 View Details */}
+        <Button asChild className="w-full bg-gradient-primary hover:shadow-glow transition-smooth group">
+          <Link to={`/project/${project.id}`} title={`View details of ${project.title}`}>
             View Details
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </CardContent>
     </Card>
   );

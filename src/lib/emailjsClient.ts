@@ -4,7 +4,6 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
-/** استدعِ هذا في App.tsx أو main.tsx مرة واحدة */
 export function initEmailJS(): void {
   emailjs.init(PUBLIC_KEY);
 }
